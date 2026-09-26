@@ -1,0 +1,6 @@
+# Original full-size image sources (the site uses the optimised JPGs in /images)
+generated-images/
+
+# OS / editor
+.DS_Store
+.claude/
