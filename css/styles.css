@@ -1508,9 +1508,18 @@ h2 {
   right: 0;
   z-index: 50;
   color: var(--ink);
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition: color 0.3s;
 }
-.navbar.is-scrolled {
+/* The bar's background and blur sit on this layer, not on .navbar itself:
+   a backdrop-filter on .navbar would trap the fixed mobile menu inside it. */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.navbar.is-scrolled::before {
   background: rgba(246, 246, 247, 0.92);
   box-shadow: 0 1px 0 var(--line);
   backdrop-filter: blur(14px) saturate(160%);
@@ -1554,7 +1563,7 @@ h2 {
 .nav a.is-active { color: var(--ink); }
 .nav a.is-current::before,
 .nav a.is-active::before { transform: scale(1); }
-.nav .nav__cta { display: none; }
+.nav__foot { display: none; }
 
 .navbar__right { display: flex; align-items: center; gap: 24px; margin-left: auto; }
 .navbar__mail { font-size: 14px; color: rgba(14, 14, 16, 0.55); transition: color 0.2s; }
@@ -1579,8 +1588,8 @@ h2 {
 .burger.is-open span:last-child { transform: translateY(-3.75px) rotate(-45deg); }
 
 /* Home: white type straight over the hero photo, until scrolled past it */
-.navbar--dark:not(.is-past-hero):not(.menu-open) {
-  color: #fff;
+.navbar--dark:not(.is-past-hero):not(.menu-open) { color: #fff; }
+.navbar--dark:not(.is-past-hero):not(.menu-open)::before {
   background: linear-gradient(rgba(10, 10, 12, 0.35), transparent);
   box-shadow: none;
   backdrop-filter: none;
@@ -1599,34 +1608,48 @@ h2 {
 @media (max-width: 960px) {
   .navbar__inner { height: 64px; padding: 0 20px; }
   .burger { display: flex; }
-  .navbar.menu-open { background: var(--page); box-shadow: 0 1px 0 var(--line); }
+  .navbar.menu-open::before { background: var(--page); box-shadow: 0 1px 0 var(--line); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .nav {
     position: fixed;
     inset: 64px 0 0;
+    display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 12px 20px 32px;
+    padding: 20px 20px calc(24px + env(safe-area-inset-bottom));
     overflow-y: auto;
+    overscroll-behavior: contain;
     background: var(--page);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s, visibility 0.25s;
+    transform: translateY(-6px);
+    /* hide only after the fade-out; show at once so focus can move in */
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
   }
-  .nav.is-open { opacity: 1; visibility: visible; }
-  .nav a {
+  .nav.is-open { opacity: 1; visibility: visible; transform: none; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s; }
+  .nav > a {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 30px;
-    line-height: 1.1;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 28px;
+    line-height: 1.15;
     letter-spacing: -0.03em;
     color: var(--ink);
   }
-  .nav a::before { position: static; margin: 0; width: 8px; height: 8px; }
-  .nav .nav__cta { display: flex; justify-content: center; height: 52px; margin-top: 28px; padding: 0; border: 0; border-radius: 999px; font-size: 16px; letter-spacing: 0; color: var(--ink); background: var(--orange); }
-  .nav .nav__cta::before { display: none; }
+  .nav > a::before { left: -14px; width: 7px; height: 7px; margin-top: -3.5px; }
+  .nav__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .nav__foot a { padding: 0; font-size: 15px; font-weight: 500; color: var(--ink); }
+  .nav__foot a::before { display: none; }
+  .nav__foot .nav__cta { height: 50px; margin-top: 20px; font-size: 16px; color: var(--ink); background: var(--orange); }
   .hero__bottom { padding-top: 96px; }
 }
 @media (max-width: 600px) {
@@ -1757,8 +1780,8 @@ h2 {
 .navbar button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 
 /* Nav on white pages */
-.inner .navbar.is-scrolled,
-.inner .navbar.menu-open { background: rgba(255, 255, 255, 0.94); }
+.inner .navbar.is-scrolled::before { background: rgba(255, 255, 255, 0.94); }
+.inner .navbar.menu-open::before { background: #fff; }
 @media (max-width: 960px) { .inner .nav { background: #fff; } }
 
 /* Buttons: ink on light, white on dark, one orange moment per page */
@@ -2133,7 +2156,7 @@ a.c--media:hover > img { transform: scale(1.03); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .navbar, .nav, .nav a::before, .c--media > img, .project p .i, .clist .i { transition: none; }
+  .navbar, .navbar::before, .nav, .nav a::before, .c--media > img, .project p .i, .clist .i { transition: none; }
   a.c--media:hover > img { transform: none; }
 }
 

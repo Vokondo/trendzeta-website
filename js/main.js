@@ -4,11 +4,16 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 const setMenu = (open) => {
+  if (open === nav.classList.contains('is-open')) return;
   nav.classList.toggle('is-open', open);
   document.getElementById('navbar').classList.toggle('menu-open', open);
   document.body.style.overflow = open ? 'hidden' : '';
   burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  // focus once the menu is visible (it can't take focus while still hidden)
+  if (open) requestAnimationFrame(() => nav.querySelector('a').focus({ preventScroll: true }));
+  else if (nav.contains(document.activeElement)) burger.focus({ preventScroll: true });
 };
 burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
 nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
@@ -16,6 +21,8 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(fa
 document.addEventListener('click', (e) => {
   if (nav.classList.contains('is-open') && !e.target.closest('#navbar')) setMenu(false);
 });
+// Close it if the window grows past the mobile breakpoint
+window.matchMedia('(min-width: 961px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
 // Floating navbar: shadow once scrolled; on home, flip from dark to light past the hero
 const navbar = document.getElementById('navbar');
