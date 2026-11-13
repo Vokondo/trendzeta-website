@@ -3,7 +3,7 @@
    ========================================================= */
 
 :root {
-  --orange: #ff5a1f;
+  --orange: #ff5f05;   /* from the logo */
   --orange-600: #e8460d;
   --orange-soft: #fff0e9;
   --ink: #0e0e10;
@@ -641,7 +641,7 @@ h2 {
   width: 100%;
   height: var(--h);
   border-radius: 4px 4px 0 0;
-  background: rgba(255, 90, 31, 0.55);
+  background: rgba(255, 95, 5, 0.55);
   transform-origin: bottom;
   transform: scaleY(0);
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s;
@@ -1105,16 +1105,12 @@ h2 {
 .socials a:hover { background: rgba(255, 255, 255, 0.18); }
 .socials svg { width: 15px; height: 15px; }
 .footer__word {
-  margin: 48px 0 -0.08em;
-  text-align: center;
-  font-size: clamp(64px, 15.5vw, 260px);
-  font-weight: 700;
-  letter-spacing: -0.06em;
-  line-height: 0.9;
-  color: rgba(255, 255, 255, 0.06);
+  margin: 56px auto 32px;
+  width: min(88%, 1240px);
   user-select: none;
+  pointer-events: none;
 }
-.footer__word span { color: var(--orange); opacity: 0.85; }
+.footer__word img { display: block; width: 100%; height: auto; }
 .footer__bottom {
   display: flex;
   justify-content: space-between;
@@ -1532,8 +1528,8 @@ h2 {
   margin: 0 auto;
   padding: 0 40px;
 }
-.logo { font-size: 22px; font-weight: 700; letter-spacing: -0.04em; }
-.logo span { color: var(--orange); }
+.logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.logo img { display: block; width: auto; height: 24px; }
 
 .nav { display: flex; gap: 32px; }
 .nav a {
@@ -1650,7 +1646,7 @@ h2 {
 }
 @media (max-width: 600px) {
   .navbar__cta { display: none; }
-  .logo { font-size: 20px; }
+  .logo img { height: 21px; }
   .hero__bottom { padding-top: 88px; }
 }
 
