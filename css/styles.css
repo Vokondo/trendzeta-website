@@ -2225,3 +2225,62 @@ a.c--media:hover > img { transform: scale(1.03); }
 }
 @media (prefers-reduced-motion: reduce) { .tcard__link .i { transition: none; } }
 
+/* Contact intro card: reply-time tag, headline, then contact tiles that
+   reuse the text-card pieces (tag, strong title, arrow action). */
+.contact-intro .tag { margin-bottom: 24px; }
+.tag--live { display: inline-flex; align-items: center; gap: 8px; }
+.tag--live i { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+.ctiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ctile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 150px;
+  padding: 18px 18px 16px;
+  border-radius: calc(var(--r-card) - 10px);
+  background: #fff;
+  color: var(--ink);
+  transition: box-shadow 0.2s;
+}
+.ctile .tag { margin: 0; font-size: 12px; padding: 2px 10px; }
+.ctile strong {
+  margin-top: 16px;
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+.ctile__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--soft);
+  transition: color 0.2s;
+}
+.ctile__go .i { width: 16px; height: 16px; transition: transform 0.2s; }
+.ctile:hover { box-shadow: 0 0 0 1px var(--rule); }
+.ctile:hover .ctile__go { color: var(--ink); }
+.ctile:hover .ctile__go .i { transform: translateX(4px); }
+@media (max-width: 600px) {
+  .contact-intro .tag--live { margin-bottom: 18px; }
+  /* one tile per row: tag + detail on the left, action on the right */
+  .ctiles { grid-template-columns: 1fr; gap: 8px; }
+  .ctile {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px 12px;
+    min-height: 0;
+    padding: 14px 16px;
+  }
+  .ctile .tag { grid-column: 1; justify-self: start; }
+  .ctile strong { grid-column: 1; margin-top: 0; font-size: 16px; overflow-wrap: normal; }
+  .ctile__go { grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 0; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { .ctile__go .i { transition: none; } }
+
