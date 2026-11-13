@@ -1625,7 +1625,7 @@ h2 {
     color: var(--ink);
   }
   .nav a::before { position: static; margin: 0; width: 8px; height: 8px; }
-  .nav .nav__cta { display: flex; justify-content: center; height: 52px; margin-top: 28px; padding: 0; border: 0; border-radius: 999px; font-size: 16px; letter-spacing: 0; color: #fff; background: var(--orange); }
+  .nav .nav__cta { display: flex; justify-content: center; height: 52px; margin-top: 28px; padding: 0; border: 0; border-radius: 999px; font-size: 16px; letter-spacing: 0; color: var(--ink); background: var(--orange); }
   .nav .nav__cta::before { display: none; }
   .hero__bottom { padding-top: 96px; }
 }
