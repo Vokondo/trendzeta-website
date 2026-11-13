@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <meta name="theme-color" content="#ff5f05" />
-  <link rel="stylesheet" href="css/styles.css?v=40" />
+  <link rel="stylesheet" href="css/styles.css?v=41" />
 </head>
 <body class="inner">
   <header class="navbar" id="navbar">
@@ -107,24 +107,30 @@
           <h2>What happens next</h2>
         </div>
       </div>
-      <ol class="grid g-3">
-        <li class="tcard c">
-          <span class="tag">Within 1 working day</span>
+      <ol class="grid g-3 scards">
+        <li class="scard scard--ink">
+          <p class="scard__big">Day 1</p>
           <h3>We reply</h3>
-          <p>A real person reads your message and gets back to you, usually the same day.</p>
-          <a href="#contact-form" class="tcard__link">Send a message <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="scard__foot">
+            <p>A real person reads your message and gets back to you, usually the same day.</p>
+            <a href="#contact-form" class="scard__go" aria-label="Send a message"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
         </li>
-        <li class="tcard c">
-          <span class="tag">Day 2–3</span>
+        <li class="scard scard--orange">
+          <p class="scard__big">Day 2–3</p>
           <h3>Free strategy call</h3>
-          <p>30 minutes on your goals, your numbers and the quickest wins we can see.</p>
-          <a href="#faq" class="tcard__link">Before the call <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="scard__foot">
+            <p>30 minutes on your goals, your numbers and the quickest wins we can see.</p>
+            <a href="#faq" class="scard__go" aria-label="Before the call"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
         </li>
-        <li class="tcard c">
-          <span class="tag">Within 48 hours</span>
+        <li class="scard scard--grey">
+          <p class="scard__big">48 hrs</p>
           <h3>Your proposal</h3>
-          <p>A clear plan, timeline and price. No pressure, no lock-in.</p>
-          <a href="pricing.html" class="tcard__link">See pricing <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="scard__foot">
+            <p>A clear plan, timeline and price. No pressure, no lock-in.</p>
+            <a href="pricing.html" class="scard__go" aria-label="See pricing"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
         </li>
       </ol>
     </div>
