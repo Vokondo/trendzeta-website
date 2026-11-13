@@ -1668,7 +1668,7 @@ h2 {
    display 40-80  500  -0.04em        lh 1
 */
 .inner {
-  --card: #f6f1ed;          /* warm off-white */
+  --card: #f1f1f3;
   --rule: #dcdce0;
   --soft: #4d4d55;
   --muted: #66666f;          /* 5:1 on the grey cards */
