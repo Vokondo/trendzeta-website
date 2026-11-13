@@ -299,7 +299,7 @@ h2 {
 /* =========================================================
    SERVICES — large edge-to-edge cards
    ========================================================= */
-.h2-xl { font-size: clamp(34px, 4.6vw, 56px); letter-spacing: -0.035em; }
+.h2-xl { font-size: clamp(30px, 3.4vw, 48px); line-height: 1.08; letter-spacing: -0.035em; }
 
 .bento {
   display: grid;
@@ -448,37 +448,46 @@ h2 {
 }
 .carousel__dots {
   display: flex;
-  gap: 8px;
-  padding: 12px 16px;
+  gap: 0;
+  padding: 0 10px;
   border-radius: 999px;
   background: #ebebee;
 }
+/* Each dot is a 20x32 button; the visible 8px dot is drawn by ::before,
+   the progress fill by ::after, so the tap area is bigger than the dot. */
 .carousel__dots button {
   position: relative;
-  width: 8px;
-  height: 8px;
+  width: 20px;
+  height: 32px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: #b8b8bf;
-  overflow: hidden;
-  transition: width 0.4s ease, background 0.3s;
+  background: transparent;
+  transition: width 0.4s ease;
 }
-.carousel__dots button.is-active { width: 44px; background: #cfcfd5; }
+.carousel__dots button::before,
 .carousel__dots button.is-active::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 12px;
+  left: 6px;
+  height: 8px;
+  border-radius: 999px;
+}
+.carousel__dots button::before { right: 6px; background: #b8b8bf; transition: background 0.3s; }
+.carousel__dots button:hover::before { background: #9a9aa2; }
+.carousel__dots button.is-active { width: 56px; }
+.carousel__dots button.is-active::before { background: #cfcfd5; }
+.carousel__dots button.is-active::after {
   width: 0;
   background: var(--ink);
-  border-radius: inherit;
-  animation: fill var(--slide-time, 6s) linear forwards;
+  animation: dotfill var(--slide-time, 6s) linear forwards;
 }
+@keyframes dotfill { to { width: calc(100% - 12px); } }
 .carousel.is-paused .carousel__dots button.is-active::after { animation-play-state: paused; }
-.carousel.is-stopped .carousel__dots button.is-active::after { animation: none; width: 100%; }
+.carousel.is-stopped .carousel__dots button.is-active::after { animation: none; width: calc(100% - 12px); }
 .carousel__play {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 0;
   background: #ebebee;
@@ -559,7 +568,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
 .journey__copy { transition: opacity 0.3s, transform 0.3s; }
 .journey__copy.is-changing { opacity: 0; transform: translateY(8px); }
@@ -1093,8 +1102,8 @@ h2 {
 .footer__grid > div > a:hover { color: #fff; }
 .socials { display: flex; gap: 8px; }
 .socials a {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -1401,7 +1410,7 @@ h2 {
   .home .tile__text p { font-size: 11px; margin-bottom: 2px; }
   .home .tile__text h3 { font-size: 19px; margin-bottom: 10px; }
   .home .tile__actions { gap: 6px; }
-  .home .tile__actions .pill { height: 30px; padding: 0 12px; font-size: 11px; }
+  .home .tile__actions .pill { height: 36px; padding: 0 16px; font-size: 13px; }
   .home .extras { margin-top: 14px; }
   .home .extras li { padding: 7px 10px; font-size: 11px; }
   .home .extras .i { width: 13px; height: 13px; }
@@ -1490,7 +1499,7 @@ h2 {
   .home .footer__brand p { font-size: 14px; margin-bottom: 14px; }
   .home .footer h3 { margin-bottom: 10px; }
   .home .footer__grid > div > a,
-  .home .footer__grid > div > span { font-size: 13px; padding: 3px 0; }
+  .home .footer__grid > div > span { font-size: 13px; padding: 8px 0; }
 }
 
 /* =========================================================
@@ -1526,7 +1535,7 @@ h2 {
   margin: 0 auto;
   padding: 0 40px;
 }
-.logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.logo { display: inline-flex; align-items: center; flex-shrink: 0; min-height: 44px; }
 .logo img { display: block; width: auto; height: 18px; }
 
 .nav { display: flex; gap: 32px; }
@@ -2159,4 +2168,25 @@ a.c--media:hover > img { transform: scale(1.03); }
 .home a:focus-visible,
 .home button:focus-visible,
 .home summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+/* =========================================================
+   UI refinements
+   ========================================================= */
+/* Footer spans the same width as the inner pages; the wordmark spans
+   exactly the footer content above it. */
+.footer .wrap { max-width: 1360px; }
+.footer__word { width: min(calc(100% - 64px), 1296px); }
+@media (max-width: 960px) { .footer__word { width: calc(100% - 40px); } }
+
+/* Monthly / Quarterly toggle: 40px tap height */
+.billing button { min-height: 40px; }
+
+/* "Still have a question?" on phones: label on its own line, buttons side by side */
+@media (max-width: 600px) {
+  .faq__cta { gap: 8px; }
+  .faq__cta span { flex-basis: 100%; margin: 0 0 4px; text-align: center; }
+  .faq__cta .pill { height: 40px; }
+  .footer__grid > div > a,
+  .footer__grid > div > span { padding-block: 8px; }
+}
 
