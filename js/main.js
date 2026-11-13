@@ -66,13 +66,13 @@ if (document.querySelector('.journey')) {
     {
       when: 'Week 1',
       title: 'We learn your business before we touch a single post.',
-      text: 'A deep look at your channels, competitors, customers and numbers — so we know exactly where the quickest wins are.',
+      text: 'A deep look at your channels, competitors, customers and numbers, so we know exactly where the quickest wins are.',
       items: ['Channel audit', 'Competitor review', 'Audience research', 'Tracking setup'],
     },
     {
       when: 'Week 2',
       title: 'A 90-day plan with clear targets, not guesswork.',
-      text: 'We agree on goals, channels, budget and the content calendar — and exactly how we will measure success.',
+      text: 'We agree on goals, channels, budget and the content calendar, and exactly how we will measure success.',
       items: ['90-day roadmap', 'Budget split', 'Content calendar', 'KPI targets'],
     },
     {
@@ -247,7 +247,7 @@ if (document.querySelector('.story')) {
       role: 'Founder, Agribusiness',
       img: 'images/avatar-2.jpg',
       result: ['+350%', 'qualified leads'],
-      text: 'Strategic, creative and results-driven. They understand our market and always bring fresh ideas — our lead pipeline has never been this full.',
+      text: 'Strategic, creative and results-driven. They understand our market and always bring fresh ideas. Our lead pipeline has never been this full.',
     },
     {
       name: 'Efua M.',

@@ -108,9 +108,9 @@ svg[viewBox] {
 }
 .pill--lg { height: 48px; padding: 0 26px; font-size: 15px; }
 .pill--light { background: #fff; color: var(--ink); }
-.pill--light:hover { background: var(--orange); color: #fff; }
-.pill--orange { background: var(--orange); color: #fff; }
-.pill--orange:hover { background: var(--orange-600); }
+.pill--light:hover { background: #e9e9ec; color: var(--ink); }
+.pill--orange { background: var(--orange); color: var(--ink); }  /* ink on orange: 6.2:1 */
+.pill--orange:hover { background: #ff7040; }
 .pill--glass {
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -433,7 +433,7 @@ h2 {
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 1;
-  color: var(--orange);
+  color: #fff;
 }
 .slide__result span { font-size: 13px; color: rgba(255, 255, 255, 0.75); margin-top: 4px; }
 .slide .pill { opacity: 0; transform: translateY(6px); transition: opacity 0.4s 0.15s, transform 0.4s 0.15s, background 0.2s, color 0.2s; }
@@ -496,7 +496,7 @@ h2 {
    PROCESS — dark panel with auto-advancing journey
    ========================================================= */
 .pill--dark { background: var(--ink); color: #fff; }
-.pill--dark:hover { background: var(--orange); }
+.pill--dark:hover { background: #2e2e33; }
 
 .panel {
   max-width: 1640px;
@@ -533,7 +533,7 @@ h2 {
 .jtab span { font-size: 12px; font-variant-numeric: tabular-nums; }
 .jtab:hover,
 .jtab.is-active { color: #fff; }
-.jtab.is-active span { color: var(--orange); }
+.jtab.is-active span { color: #fff; }
 .jtab i {
   position: absolute;
   left: 0;
@@ -723,7 +723,7 @@ h2 {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .billing button.is-active { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
-.billing em { font-style: normal; color: var(--orange); font-weight: 500; margin-left: 4px; }
+.billing em { font-style: normal; color: var(--ink); font-weight: 500; margin-left: 4px; }
 
 /* Plan cards — tall image cards, text anchored bottom-left */
 .plans {
@@ -753,7 +753,7 @@ h2 {
 }
 .tier--growth { box-shadow: inset 0 0 0 2px var(--orange); }
 .tier::after { place-items: start center; padding-top: 30%; }
-.chip--orange { background: var(--orange); border-color: var(--orange); }
+.chip--orange { background: var(--orange); border-color: var(--orange); color: var(--ink); }
 .tier .chip { top: 24px; left: 24px; }
 
 .tier__body {
@@ -787,7 +787,7 @@ h2 {
   font-variant-numeric: tabular-nums;
 }
 .tier__price small { font-size: 14px; color: rgba(255, 255, 255, 0.65); }
-.tier--growth .tier__price span { color: var(--orange); }
+.tier--growth .tier__price span { color: #fff; }
 .tier__plus { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px; }
 .tier ul { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
 .tier li { position: relative; padding-left: 26px; font-size: 14px; color: rgba(255, 255, 255, 0.9); }
@@ -801,7 +801,6 @@ h2 {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") no-repeat center / 10px;
 }
-.tier--growth li::before { background-color: var(--orange); }
 .tier .pill { height: 48px; width: 100%; }
 
 /* Compare table */
@@ -905,13 +904,13 @@ h2 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
-.story__result strong { color: var(--orange); font-weight: 600; margin-right: 4px; }
+.story__result strong { color: #fff; font-weight: 600; margin-right: 4px; }
 .story__body {
   display: flex;
   flex-direction: column;
   padding: 56px 56px 40px;
 }
-.story__mark { width: 40px; height: 30px; color: var(--orange); margin-bottom: 28px; }
+.story__mark { width: 40px; height: 30px; color: var(--ink); margin-bottom: 28px; }
 .story blockquote {
   flex: 1;
   margin: 0;
@@ -982,7 +981,7 @@ h2 {
   cursor: pointer;
   transition: color 0.2s;
 }
-.faq summary:hover { color: var(--orange); }
+.faq summary:hover { color: var(--muted); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: "";
@@ -995,7 +994,7 @@ h2 {
 }
 .faq details[open] summary::after {
   transform: rotate(45deg);
-  background-color: var(--orange);
+  background-color: var(--ink);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E");
 }
 .faq details p { padding: 0 56px 28px 0; font-size: 15px; color: var(--muted); max-width: 680px; }
@@ -1091,7 +1090,7 @@ h2 {
 .footer h3 { font-size: 13px; font-weight: 500; color: #fff; margin-bottom: 16px; }
 .footer__grid > div > a,
 .footer__grid > div > span { display: block; padding: 4px 0; }
-.footer__grid > div > a:hover { color: var(--orange); }
+.footer__grid > div > a:hover { color: #fff; }
 .socials { display: flex; gap: 8px; }
 .socials a {
   width: 36px;
@@ -1103,7 +1102,7 @@ h2 {
   color: #fff;
   transition: background 0.2s;
 }
-.socials a:hover { background: var(--orange); }
+.socials a:hover { background: rgba(255, 255, 255, 0.18); }
 .socials svg { width: 15px; height: 15px; }
 .footer__word {
   margin: 48px 0 -0.08em;
@@ -1900,7 +1899,6 @@ a.c--media:hover > img { transform: scale(1.03); }
 .inner .faq summary { padding: 24px 0; }
 .inner .faq summary:hover { color: var(--muted); }
 .inner .faq summary::after { background-color: #fff; }
-.inner .faq details[open] summary::after { background-color: var(--ink); }
 .inner .faq details p { max-width: 64ch; font-size: var(--fs-body); line-height: 1.6; color: var(--soft); }
 
 /* ---------- About ---------- */
@@ -1914,7 +1912,6 @@ a.c--media:hover > img { transform: scale(1.03); }
 .inner .billing { margin-top: 0; background: var(--card); border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
 .inner .billing button { color: var(--soft); }
 .inner .billing button.is-active { color: var(--ink); }
-.inner .billing em { color: var(--ink); }
 
 .plan-grid { margin-top: 56px; text-align: left; }
 .plan { --inset: 12px; display: flex; flex-direction: column; padding: var(--inset); }
@@ -2139,3 +2136,23 @@ a.c--media:hover > img { transform: scale(1.03); }
   .navbar, .nav, .nav a::before, .c--media > img, .project p .i, .clist .i { transition: none; }
   a.c--media:hover > img { transform: none; }
 }
+
+/* =========================================================
+   HOME — clean-up layer
+   ========================================================= */
+.home p.extras {
+  display: block;
+  max-width: 60ch;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.home .plans__note { margin-top: 20px; font-size: 14px; }
+.home .plans__note a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.home .plans__note a:hover { color: var(--muted); }
+.home a:focus-visible,
+.home button:focus-visible,
+.home summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
