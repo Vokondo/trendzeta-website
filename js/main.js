@@ -363,7 +363,7 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 document
-  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .inner .grid, .inner .cells, .inner .shead, .inner .rail, .spec-card, .cta-card, .office')
+  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .plans, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .inner .grid, .inner .cells, .inner .shead, .inner .rail, .spec-card, .cta-card, .office')
   .forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 3) * 70}ms`;
