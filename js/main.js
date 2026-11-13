@@ -5,6 +5,8 @@ const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 const setMenu = (open) => {
   nav.classList.toggle('is-open', open);
+  document.getElementById('navbar').classList.toggle('menu-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
   burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', String(open));
 };
@@ -343,7 +345,7 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 document
-  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .about-visual, .stats, .ourstory, .values, .team, .plans-grid, .ctable, .oneoff, .feats, .ctabox, .steps, .office, .shead, .form-card')
+  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .srow, .figures, .photo, .tiers, .band, .form, .contact-hero > div:first-child')
   .forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 3) * 70}ms`;

@@ -8,22 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=24" />
+  <link rel="stylesheet" href="css/styles.css?v=25" />
 </head>
 <body class="inner">
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
       <a href="index.html" class="logo" aria-label="Trendzeta home">Trendzeta<span>.</span></a>
       <nav class="nav" id="nav" aria-label="Main">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#work">Work</a>
-      <a href="about.html">About</a>
-      <a href="pricing.html" class="is-current" aria-current="page">Pricing</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="pill nav__cta">Book a free call</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html" class="is-current" aria-current="page">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="pill nav__cta">Book a call</a>
       </nav>
       <div class="navbar__right">
-        <a href="contact.html" class="pill pill--orange navbar__cta">Book a call <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="mailto:hello@trendzeta.com" class="navbar__mail">hello@trendzeta.com</a>
+        <a href="contact.html" class="pill pill--orange navbar__cta">Book a call</a>
         <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
           <span></span><span></span>
         </button>
@@ -31,227 +32,182 @@
     </div>
   </header>
 <div class="page">
-  <!-- ============ HERO + PLANS ============ -->
-  <header class="ihero ihero--center" id="plans">
+  <!-- ============ HERO ============ -->
+  <header class="ihero">
     <div class="wrap">
-      <span class="eyebrow"><i></i>Pricing</span>
+      <p class="kicker"><i></i>Pricing</p>
       <h1>Simple plans. <em>Honest numbers.</em></h1>
-      <p class="ihero__lead">Monthly retainers with no long lock-in, plus one-off projects when you just need one thing done well.</p>
-      <div class="billing" role="group" aria-label="Billing cycle">
-        <button class="is-active" data-cycle="monthly">Monthly</button>
-        <button data-cycle="quarterly">Quarterly <em>Save 10%</em></button>
+      <div class="ihero__foot">
+        <p class="ihero__lead">Monthly retainers with no long lock-in, plus one-off projects when you just need one thing done well.</p>
+        <div class="billing" role="group" aria-label="Billing cycle">
+          <button class="is-active" data-cycle="monthly">Monthly</button>
+          <button data-cycle="quarterly">Quarterly <em>Save 10%</em></button>
+        </div>
       </div>
-
-      <div class="plans-grid">
-      <article class="plan card ">
-        <div class="plan__img media" data-label="plan-starter.jpg">
-          <img src="images/plan-starter.jpg" alt="" onerror="this.remove()" />
-        </div>
-        <div class="plan__body">
-          <h3 class="plan__name">Starter</h3>
-          <p class="plan__for">Show up consistently online.</p>
-          <p class="plan__price"><small>GH₵</small><span data-price="3500">3,500</span><small>/month</small></p>
-          <a href="contact.html" class="pill pill--ink">Choose Starter</a>
-          <p class="plan__label">What's included</p>
+      <div class="tiers">
+        <article class="tierc ">
+          <div class="tierc__head"><h3>Starter</h3></div>
+          <p class="tierc__for">Show up consistently online.</p>
+          <p class="tierc__price"><small>GH₵</small><span data-price="3500">3,500</span><small>/month</small></p>
+          <a href="contact.html" class="pill pill--line">Choose Starter</a>
+          <p class="tierc__plus">What's included</p>
           <ul>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>2 social platforms</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>12 designed posts a month</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Community management</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Monthly performance report</li>
+            <li>2 social platforms</li>
+            <li>12 designed posts a month</li>
+            <li>Community management</li>
+            <li>Monthly performance report</li>
           </ul>
-        </div>
-      </article>
-      <article class="plan card plan--featured">
-        <div class="plan__img media" data-label="plan-growth.jpg">
-          <img src="images/plan-growth.jpg" alt="" onerror="this.remove()" />
-        </div>
-        <div class="plan__body">
-          <h3 class="plan__name">Growth<span class="plan__badge">Most popular</span></h3>
-          <p class="plan__for">Turn attention into sales.</p>
-          <p class="plan__price"><small>GH₵</small><span data-price="8500">8,500</span><small>/month</small></p>
+        </article>
+        <article class="tierc tierc--featured">
+          <div class="tierc__head"><h3>Growth</h3><span class="tierc__tag">Most popular</span></div>
+          <p class="tierc__for">Turn attention into sales.</p>
+          <p class="tierc__price"><small>GH₵</small><span data-price="8500">8,500</span><small>/month</small></p>
           <a href="contact.html" class="pill pill--orange">Choose Growth</a>
-          <p class="plan__label">Everything in Starter, plus</p>
+          <p class="tierc__plus">Everything in Starter, plus</p>
           <ul>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>3 platforms + 4 short videos</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Meta &amp; Google ad management</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Quarterly content shoot</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Live dashboard &amp; monthly call</li>
+            <li>3 platforms + 4 short videos</li>
+            <li>Meta &amp; Google ad management</li>
+            <li>Quarterly content shoot</li>
+            <li>Live dashboard &amp; monthly call</li>
           </ul>
-        </div>
-      </article>
-      <article class="plan card ">
-        <div class="plan__img media" data-label="plan-scale.jpg">
-          <img src="images/plan-scale.jpg" alt="" onerror="this.remove()" />
-        </div>
-        <div class="plan__body">
-          <h3 class="plan__name">Scale</h3>
-          <p class="plan__for">A full marketing team on call.</p>
-          <p class="plan__price"><span>Custom</span></p>
-          <a href="contact.html" class="pill pill--ghost">Book a call</a>
-          <p class="plan__label">Everything in Growth, plus</p>
+        </article>
+        <article class="tierc ">
+          <div class="tierc__head"><h3>Scale</h3></div>
+          <p class="tierc__for">A full marketing team on call.</p>
+          <p class="tierc__price"><span>Let's talk</span></p>
+          <a href="contact.html" class="pill pill--ink">Book a call</a>
+          <p class="tierc__plus">Everything in Growth, plus</p>
           <ul>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Unlimited channels &amp; monthly shoots</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Influencer campaigns</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>SEO &amp; landing pages</li>
-            <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Dedicated team, weekly check-ins</li>
+            <li>Unlimited channels &amp; monthly shoots</li>
+            <li>Influencer campaigns</li>
+            <li>SEO &amp; landing pages</li>
+            <li>Dedicated team, weekly check-ins</li>
           </ul>
-        </div>
-      </article>
+        </article>
       </div>
-      <ul class="assure">
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Monthly after the first 3 months</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ad spend paid straight to the platforms</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Switch plans at the start of any month</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Prices exclude VAT</li>
-      </ul>
+      <p class="terms"><span>Prices exclude VAT and ad spend.</span><span>Monthly after the first 3 months.</span><span>Switch plans at the start of any month.</span></p>
     </div>
   </header>
 
-  <!-- ============ COMPARE ============ -->
   <section class="section" id="compare">
     <div class="wrap">
-      <div class="shead shead--center">
-        <span class="eyebrow"><i></i>Compare plans</span>
-        <h2>Every feature, side by side.</h2>
-      </div>
-      <div class="ctable card">
-        <table>
-          <thead>
-            <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Starter<small>GH₵ 3,500/mo</small></th><th scope="col" class="is-featured">Growth<small>GH₵ 8,500/mo</small></th><th scope="col">Scale<small>Custom</small></th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Social platforms</th><td>2</td><td class="is-featured">3</td><td>Unlimited</td></tr>
-            <tr><th scope="row">Posts per month</th><td>12</td><td class="is-featured">20</td><td>Custom</td></tr>
-            <tr><th scope="row">Short-form videos</th><td><span class="no" aria-label="Not included">—</span></td><td class="is-featured">4 / month</td><td>8+ / month</td></tr>
-            <tr><th scope="row">Community management</th><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td><td class="is-featured"><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td></tr>
-            <tr><th scope="row">Paid ads management</th><td><span class="no" aria-label="Not included">—</span></td><td class="is-featured">Meta &amp; Google</td><td>All platforms</td></tr>
-            <tr><th scope="row">Content shoot</th><td><span class="no" aria-label="Not included">—</span></td><td class="is-featured">Quarterly</td><td>Monthly</td></tr>
-            <tr><th scope="row">Influencer campaigns</th><td><span class="no" aria-label="Not included">—</span></td><td class="is-featured"><span class="no" aria-label="Not included">—</span></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td></tr>
-            <tr><th scope="row">SEO &amp; landing pages</th><td><span class="no" aria-label="Not included">—</span></td><td class="is-featured"><span class="no" aria-label="Not included">—</span></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td></tr>
-            <tr><th scope="row">Reporting</th><td>Monthly report</td><td class="is-featured">Live dashboard</td><td>Live dashboard + weekly</td></tr>
-            <tr><th scope="row">Strategy calls</th><td><span class="no" aria-label="Not included">—</span></td><td class="is-featured">Monthly</td><td>Weekly</td></tr>
-            <tr><th scope="row">Your team</th><td>Shared team</td><td class="is-featured">Account manager</td><td>Dedicated team</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ONE-OFF PROJECTS ============ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="shead shead--split">
-        <div>
-          <span class="eyebrow"><i></i>One-off projects</span>
-          <h2>Just need one thing?</h2>
+      <div class="srow">
+      <p class="kicker"><b>01</b>Compare</p>
+      <div>
+        <div class="srow__intro">
+          <h2>What's in each plan.</h2>
+          
         </div>
-        <p>No retainer required. Tell us what you need and we'll send a fixed quote within 48 hours.</p>
+        <div class="spec-wrap">
+          <table class="spec">
+            <thead>
+              <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Starter</th><th scope="col" class="is-featured">Growth</th><th scope="col">Scale</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Social platforms</th><td>2</td><td>3</td><td>Unlimited</td></tr>
+              <tr><th scope="row">Posts per month</th><td>12</td><td>20</td><td>Custom</td></tr>
+              <tr><th scope="row">Short-form videos</th><td><span class="no" aria-label="Not included">—</span></td><td>4 / month</td><td>8+ / month</td></tr>
+              <tr><th scope="row">Community management</th><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td></tr>
+              <tr><th scope="row">Paid ads management</th><td><span class="no" aria-label="Not included">—</span></td><td>Meta &amp; Google</td><td>All platforms</td></tr>
+              <tr><th scope="row">Content shoot</th><td><span class="no" aria-label="Not included">—</span></td><td>Quarterly</td><td>Monthly</td></tr>
+              <tr><th scope="row">Influencer campaigns</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td></tr>
+              <tr><th scope="row">SEO &amp; landing pages</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><svg class="yes" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M6 12l4 4 8-8"/></svg></td></tr>
+              <tr><th scope="row">Reporting</th><td>Monthly report</td><td>Live dashboard</td><td>Live dashboard + weekly</td></tr>
+              <tr><th scope="row">Strategy calls</th><td><span class="no" aria-label="Not included">—</span></td><td>Monthly</td><td>Weekly</td></tr>
+              <tr><th scope="row">Your team</th><td>Shared team</td><td>Account manager</td><td>Dedicated team</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="oneoff">
-      <a href="contact.html" class="ocard card lift">
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></span>
-        <h3>Brand photo &amp; video shoot</h3>
-        <p>A half-day shoot with edited photos and short videos.</p>
-        <span class="ocard__price"><span>from <strong>GH₵ 2,500</strong></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="contact.html" class="ocard card lift">
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
-        <h3>Website or landing page</h3>
-        <p>A fast, mobile-first site built to turn visitors into leads.</p>
-        <span class="ocard__price"><span>from <strong>GH₵ 6,000</strong></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="contact.html" class="ocard card lift">
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18M3.5 9h17M3.5 15h17"/></svg></span>
-        <h3>Logo &amp; brand identity</h3>
-        <p>Logo, colours, type and a simple guide your team can use.</p>
-        <span class="ocard__price"><span>from <strong>GH₵ 5,000</strong></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="contact.html" class="ocard card lift">
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 001 1h3l5 4V6L7 10H4a1 1 0 00-1 1zM16 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/></svg></span>
-        <h3>Launch campaign</h3>
-        <p>Creative and ads for a product, store or event launch.</p>
-        <span class="ocard__price"><span>from <strong>GH₵ 4,000</strong></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ ALWAYS INCLUDED ============ -->
   <section class="section">
     <div class="wrap">
-      <div class="shead shead--center">
-        <span class="eyebrow"><i></i>Every plan</span>
-        <h2>Always included.</h2>
-        <p>Whatever you spend with us, these come as standard.</p>
+      <div class="srow">
+      <p class="kicker"><b>02</b>One-off projects</p>
+      <div>
+        <div class="srow__intro">
+          <h2>Just need one thing?</h2>
+          <p>No retainer needed. Tell us what you have in mind and we will send a fixed quote.</p>
+        </div>
+        <ul class="pricelist">
+          <li><a href="contact.html"><h3>Brand photo &amp; video shoot</h3><span>from <b>GH₵ 2,500</b></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="contact.html"><h3>Website or landing page</h3><span>from <b>GH₵ 6,000</b></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="contact.html"><h3>Logo &amp; brand identity</h3><span>from <b>GH₵ 5,000</b></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="contact.html"><h3>Launch campaign</h3><span>from <b>GH₵ 4,000</b></span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ul>
       </div>
-      <ul class="feats card">
-      <li>
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><path d="M5 20v-5M10 20V10M15 20v-8M20 20V5"/></svg></span>
-        <strong>Live performance dashboard</strong>
-        <p>Check results any time, not just at month end.</p>
-      </li>
-      <li>
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 19c0-2.5-1.7-4.3-4-4.8"/></svg></span>
-        <strong>A real account manager</strong>
-        <p>One person who knows your business, on WhatsApp.</p>
-      </li>
-      <li>
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 118 0v3"/></svg></span>
-        <strong>You own everything</strong>
-        <p>Ad accounts, content and data stay in your name.</p>
-      </li>
-      <li>
-        <span class="icon-tile"><svg class="i" viewBox="0 0 24 24"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg></span>
-        <strong>48-hour onboarding</strong>
-        <p>Kickoff call to first content in two working days.</p>
-      </li>
-      </ul>
+      </div>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
-  <section class="section" id="faq">
-    <div class="wrap faqsplit">
-      <div class="shead">
-        <span class="eyebrow"><i></i>FAQ</span>
-        <h2>Pricing questions.</h2>
-        <p>Not sure which plan fits? <a href="contact.html">Talk to us</a> — we'll recommend one honestly.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="srow">
+      <p class="kicker"><b>03</b>Every plan</p>
+      <div>
+        <div class="srow__intro">
+          <h2>Always included.</h2>
+          <p>Whatever you spend with us, these come as standard.</p>
+        </div>
+        <ul class="notes">
+          <li><strong>Live performance dashboard</strong><p>Check results any time, not just at month end.</p></li>
+          <li><strong>A real account manager</strong><p>One person who knows your business, on WhatsApp.</p></li>
+          <li><strong>You own everything</strong><p>Ad accounts, content and data stay in your name.</p></li>
+          <li><strong>48-hour onboarding</strong><p>Kickoff call to first content in two working days.</p></li>
+        </ul>
       </div>
-      <div class="faq card">
-        <details open>
-          <summary>Is ad spend included in the price?</summary>
-          <p>No. Ad spend is paid directly to Meta, Google or TikTok from your own account, so you keep full ownership and transparency. Our fee covers strategy, creative and management.</p>
-        </details>
-        <details>
-          <summary>How long is the contract?</summary>
-          <p>Retainers run month to month after an initial 3-month period — enough time to set up properly and show real results.</p>
-        </details>
-        <details>
-          <summary>Can I switch plans later?</summary>
-          <p>Yes. You can move up or down a plan at the start of any month. Most clients start on Starter or Growth and scale up once results come in.</p>
-        </details>
-        <details>
-          <summary>How does quarterly billing work?</summary>
-          <p>Pay for three months up front and save 10% on your retainer. Quarterly plans still include a monthly review and report.</p>
-        </details>
-        <details>
-          <summary>Do you offer one-off projects?</summary>
-          <p>Yes — shoots, websites, brand identity and launch campaigns can all be booked without a retainer.</p>
-        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="srow">
+      <p class="kicker"><b>04</b>FAQ</p>
+      <div>
+        <div class="srow__intro">
+          <h2>Pricing questions.</h2>
+          <p>Not sure which plan fits? <a href="contact.html">Talk to us</a> and we'll recommend one honestly.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Is ad spend included in the price?</summary>
+            <p>No. Ad spend is paid directly to Meta, Google or TikTok from your own account, so you keep full ownership and transparency. Our fee covers strategy, creative and management.</p>
+          </details>
+          <details>
+            <summary>How long is the contract?</summary>
+            <p>Retainers run month to month after an initial 3-month period. That gives us enough time to set up properly and show real results.</p>
+          </details>
+          <details>
+            <summary>Can I switch plans later?</summary>
+            <p>Yes. You can move up or down a plan at the start of any month. Most clients start on Starter or Growth and scale up once results come in.</p>
+          </details>
+          <details>
+            <summary>How does quarterly billing work?</summary>
+            <p>Pay for three months up front and save 10% on your retainer. Quarterly plans still include a monthly review and report.</p>
+          </details>
+          <details>
+            <summary>Do you offer one-off projects?</summary>
+            <p>Yes. Shoots, websites, brand identity and launch campaigns can all be booked without a retainer.</p>
+          </details>
+        </div>
+      </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CTA ============ -->
   <section class="section">
-    <div class="wrap">
-      <div class="ctabox card">
-        <span class="eyebrow"><i></i>Free marketing audit</span>
-        <h2>Not sure where to start?</h2>
-        <p>Get a free audit of your current marketing. We'll recommend the plan that fits — or tell you if you don't need one yet.</p>
+    <div class="band">
+      <h2>Not sure where to start?</h2>
+      <div>
+        <p>Get a free audit of your current marketing. We'll recommend the plan that fits, or tell you if you don't need one yet.</p>
         <div class="ihero__actions">
-          <a href="contact.html" class="pill pill--orange pill--lg">Get a free audit <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="about.html" class="pill pill--ghost pill--lg">About us</a>
+          <a href="contact.html" class="pill pill--ink pill--lg">Get a free audit <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="about.html" class="pill pill--line pill--lg">About us</a>
         </div>
       </div>
     </div>
@@ -303,6 +259,6 @@
   </footer>
 
 </div>
-<script src="js/main.js?v=7"></script>
+<script src="js/main.js?v=8"></script>
 </body>
 </html>
