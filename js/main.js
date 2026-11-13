@@ -152,6 +152,24 @@ billingBtns.forEach((btn) =>
   })
 );
 
+// ---------- Pricing cards (swipeable on smaller screens) ----------
+// Start centred on the middle card, with a neighbour peeking in on each side.
+// Uses scrollLeft on the row itself so the page doesn't jump.
+const plansRow = document.querySelector('.home .plans');
+if (plansRow) {
+  let plansTouched = false;
+  const centrePlans = () => {
+    if (plansTouched || plansRow.scrollWidth <= plansRow.clientWidth + 2) return;
+    const cards = [...plansRow.querySelectorAll('.tier')].sort((a, b) => a.offsetLeft - b.offsetLeft);
+    const mid = cards[Math.floor(cards.length / 2)];
+    plansRow.scrollLeft = mid.offsetLeft - (plansRow.clientWidth - mid.offsetWidth) / 2;
+  };
+  ['pointerdown', 'wheel', 'keydown'].forEach((ev) => plansRow.addEventListener(ev, () => { plansTouched = true; }, { passive: true }));
+  centrePlans();
+  window.addEventListener('load', centrePlans);
+  window.addEventListener('resize', centrePlans);
+}
+
 // ---------- Case study carousel ----------
 if (document.querySelector('.carousel')) {
   const carousel = document.querySelector('.carousel');
