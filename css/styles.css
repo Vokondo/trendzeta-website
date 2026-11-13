@@ -2346,7 +2346,13 @@ a.c--media:hover > img { transform: scale(1.03); }
   .scard { min-height: 300px; }
 }
 @media (max-width: 600px) {
-  .scard { min-height: 260px; padding: 22px 20px 20px; }
-  .scard h3 { font-size: 20px; }
+  .scard { min-height: 0; padding: 18px 18px 16px; }
+  .scard__big { font-size: 28px; }
+  .scard h3 { margin-top: 6px; font-size: 17px; }
+  .scard__foot,
+  .scard h3 + .scard__foot { margin-top: 18px; padding-top: 14px; gap: 14px; align-items: center; }
+  .scard__foot p { font-size: 13px; }
+  .scard__go { width: 40px; height: 40px; }
+  .scard__go .i { width: 16px; height: 16px; }
 }
 
