@@ -8,142 +8,179 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=23" />
+  <link rel="stylesheet" href="css/styles.css?v=24" />
 </head>
 <body class="inner">
-<div class="page">
-  <!-- ============ PAGE HEADER ============ -->
-  <header class="phead" id="top">
-    <div class="topbar">
-      <a href="index.html" class="logo">Trendzeta<span>.</span></a>
-
-      <nav class="nav" id="nav">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#work">Work</a>
-        <a href="about.html" class="is-current" aria-current="page">About</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="contact.html">Contact</a>
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="logo" aria-label="Trendzeta home">Trendzeta<span>.</span></a>
+      <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Work</a>
+      <a href="about.html" class="is-current" aria-current="page">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="pill nav__cta">Book a free call</a>
       </nav>
-
-      <div class="topbar__right">
-        <a href="contact.html" class="pill pill--light">Book a call</a>
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <div class="navbar__right">
+        <a href="contact.html" class="pill pill--orange navbar__cta">Book a call <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
           <span></span><span></span>
         </button>
       </div>
     </div>
-
-    <div class="phead__body">
-      <div class="phead__copy">
-        <p class="crumbs"><a href="index.html">Home</a><span>/</span>About</p>
-        <h1>We help Ghanaian brands <em>win online.</em></h1>
-        <p class="phead__text">A small, senior team of strategists, creators and media buyers in Accra — measured on one thing: your growth.</p>
+  </header>
+<div class="page">
+  <!-- ============ HERO ============ -->
+  <header class="ihero ihero--center">
+    <div class="wrap">
+      <span class="eyebrow"><i></i>About Trendzeta</span>
+      <h1>We help Ghanaian brands <em>win online.</em></h1>
+      <p class="ihero__lead">A small, senior team of strategists, creators and media buyers in Accra — measured on one thing: your growth.</p>
+      <div class="ihero__actions">
+        <a href="contact.html" class="pill pill--orange pill--lg">Book a call <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="index.html#work" class="pill pill--ghost pill--lg">See our work</a>
       </div>
-      <div class="phead__aside photo-stack">
-        <div class="photo-stack__main media" data-label="plan-scale.jpg">
-          <img src="images/plan-scale.jpg" alt="The Trendzeta team in a strategy session" onerror="this.remove()" />
-        </div>
-        <div class="photo-stack__small media" data-label="service-content-v2.jpg">
+
+      <div class="about-visual">
+        <div class="about-visual__side media" data-label="service-content-v2.jpg">
           <img src="images/service-content-v2.jpg" alt="A content shoot in the studio" onerror="this.remove()" />
         </div>
-        <span class="glass-tag"><strong>100+</strong> brands grown from Accra</span>
+        <div class="about-visual__main media" data-label="plan-scale.jpg">
+          <img src="images/plan-scale.jpg" alt="The Trendzeta team's editing suite" onerror="this.remove()" />
+        </div>
+        <div class="about-visual__side media" data-label="service-strategy-v2.jpg">
+          <img src="images/service-strategy-v2.jpg" alt="A brand strategy session" onerror="this.remove()" />
+        </div>
+        <div class="float-card">
+          <span class="faces">
+            <span class="media" data-label=""><img src="images/avatar-1.jpg" alt="" onerror="this.remove()" /></span>
+            <span class="media" data-label=""><img src="images/avatar-2.jpg" alt="" onerror="this.remove()" /></span>
+            <span class="media" data-label=""><img src="images/avatar-3.jpg" alt="" onerror="this.remove()" /></span>
+          </span>
+          <span><strong>100+ brands grown</strong><small>from our studio in Accra</small></span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- ============ MANIFESTO ============ -->
+  <!-- ============ NUMBERS ============ -->
   <section class="section">
-    <div class="wrap manifesto">
-      <p class="label">(01) Our story</p>
-      <p class="manifesto__text">Too many businesses spend on marketing without knowing what it returns. <span>Beautiful posts, zero sales.</span> We built Trendzeta around the opposite idea — every campaign starts with a <em>business goal</em>, every piece of content is made to <em>move someone to act</em>, and every client sees <em>exactly where their money goes.</em></p>
-      <div class="manifesto__meta">
-        <p>We work with restaurants, fintechs, farms, retailers and non-profits across Ghana and West Africa.</p>
-        <p>Strategy, content and media under one roof — so nothing gets lost between agencies.</p>
-      </div>
-    </div>
+    <ul class="wrap stats">
+      <li class="stat card"><strong>100<em>+</em></strong><span>Businesses grown</span></li>
+      <li class="stat card"><strong>3<em>x</em></strong><span>Average lift in leads</span></li>
+      <li class="stat card"><strong>2.5M<em>+</em></strong><span>People reached monthly</span></li>
+      <li class="stat card"><strong>4.9</strong><span>Average client rating</span></li>
+    </ul>
+  </section>
 
-    <div class="wrap numbers">
-      <div><strong>100+</strong><span>Businesses grown</span></div>
-      <div><strong>3x</strong><span>Average lift in leads</span></div>
-      <div><strong>2.5M+</strong><span>People reached monthly</span></div>
-      <div><strong>4.9</strong><span>Average client rating</span></div>
+  <!-- ============ STORY ============ -->
+  <section class="section">
+    <div class="wrap ourstory">
+      <div class="shead">
+        <span class="eyebrow"><i></i>Our story</span>
+        <h2>Marketing you can actually measure.</h2>
+      </div>
+      <div>
+        <p class="ourstory__lede">Too many businesses spend on marketing without knowing what it returns — beautiful posts, zero sales. We built Trendzeta around the opposite idea: every campaign starts with a <em>business goal</em>, and every client sees <em>exactly where their money goes.</em></p>
+        <p class="ourstory__text">We work with restaurants, fintechs, farms, retailers and non-profits across Ghana and West Africa.</p>
+        <ul class="ticks">
+          <li class="card"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Strategy, content and media under one roof</li>
+          <li class="card"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Senior people on every single account</li>
+          <li class="card"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Live reporting on leads, sales and spend</li>
+          <li class="card"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Made for how Ghana shops and pays</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- ============ VALUES ============ -->
   <section class="section">
-    <div class="panel values-panel">
-      <div class="values-panel__head">
-        <p class="label label--light">(02) What we believe</p>
-        <h2 class="h2-xl">Four rules we work by.</h2>
+    <div class="wrap">
+      <div class="shead shead--center">
+        <span class="eyebrow"><i></i>What we believe</span>
+        <h2>Four rules we work by.</h2>
       </div>
-      <ol class="vrows">
-        <li class="vrow">
-          <span class="vrow__num">01</span>
-          <h3>Results over vanity</h3>
-          <p>We report on orders, leads and revenue — not follower counts. If a number doesn't grow your business, we don't chase it.</p>
-        </li>
-        <li class="vrow">
-          <span class="vrow__num">02</span>
-          <h3>Built for Ghana</h3>
-          <p>We know how Ghanaians shop, scroll and pay. Our work is made for this market, not copied from somewhere else.</p>
-        </li>
-        <li class="vrow">
-          <span class="vrow__num">03</span>
-          <h3>Radical honesty</h3>
-          <p>You see every cedi of ad spend and every result, good or bad. When something isn't working, we tell you first.</p>
-        </li>
-        <li class="vrow">
-          <span class="vrow__num">04</span>
-          <h3>Creative that converts</h3>
-          <p>Beautiful content is the start, not the goal. Every post, video and ad is made to move someone to act.</p>
-        </li>
+      <ol class="values">
+      <li class="vcard card lift">
+        <span class="icon-tile">01</span>
+        <h3>Results over vanity</h3>
+        <p>We report on orders, leads and revenue — not follower counts. If a number doesn't grow your business, we don't chase it.</p>
+      </li>
+      <li class="vcard card lift">
+        <span class="icon-tile">02</span>
+        <h3>Built for Ghana</h3>
+        <p>We know how Ghanaians shop, scroll and pay. Our work is made for this market, not copied from somewhere else.</p>
+      </li>
+      <li class="vcard card lift">
+        <span class="icon-tile">03</span>
+        <h3>Radical honesty</h3>
+        <p>You see every cedi of ad spend and every result, good or bad. When something isn't working, we tell you first.</p>
+      </li>
+      <li class="vcard card lift">
+        <span class="icon-tile">04</span>
+        <h3>Creative that converts</h3>
+        <p>Beautiful content is the start, not the goal. Every post, video and ad is made to move someone to act.</p>
+      </li>
       </ol>
     </div>
   </section>
 
   <!-- ============ TEAM ============ -->
   <section class="section">
-    <div class="wrap team-head">
-      <div>
-        <p class="label">(03) The team</p>
-        <h2 class="h2-xl">The people behind the work.</h2>
+    <div class="wrap">
+      <div class="shead shead--split">
+        <div>
+          <span class="eyebrow"><i></i>The team</span>
+          <h2>The people behind the work.</h2>
+        </div>
+        <p>Senior people on every account — the team you meet is the team that does the work.</p>
       </div>
-      <p class="head__text">Senior people on every account — the team you meet is the team that does the work.</p>
-    </div>
-    <div class="team-strip">
-      <article class="member media" data-label="team-1.jpg" data-initials="KA">
-        <img src="images/team-1.jpg" alt="Kwame Asante" onerror="this.remove()" />
-        <span class="member__tag"><strong>Kwame Asante</strong><small>Founder &amp; Strategy Director</small></span>
+      <div class="team">
+      <article class="tcard card lift">
+        <div class="tcard__photo media" data-label="" data-initials="KA">
+          <img src="images/team-1.jpg" alt="Kwame Asante" onerror="this.remove()" />
+        </div>
+        <div class="tcard__body"><strong>Kwame Asante</strong><small>Founder &amp; Strategy Director</small></div>
       </article>
-      <article class="member media" data-label="team-2.jpg" data-initials="AO">
-        <img src="images/team-2.jpg" alt="Abena Owusu" onerror="this.remove()" />
-        <span class="member__tag"><strong>Abena Owusu</strong><small>Head of Content</small></span>
+      <article class="tcard card lift">
+        <div class="tcard__photo media" data-label="" data-initials="AO">
+          <img src="images/team-2.jpg" alt="Abena Owusu" onerror="this.remove()" />
+        </div>
+        <div class="tcard__body"><strong>Abena Owusu</strong><small>Head of Content</small></div>
       </article>
-      <article class="member media" data-label="team-3.jpg" data-initials="YB">
-        <img src="images/team-3.jpg" alt="Yaw Boateng" onerror="this.remove()" />
-        <span class="member__tag"><strong>Yaw Boateng</strong><small>Paid Media Lead</small></span>
+      <article class="tcard card lift">
+        <div class="tcard__photo media" data-label="" data-initials="YB">
+          <img src="images/team-3.jpg" alt="Yaw Boateng" onerror="this.remove()" />
+        </div>
+        <div class="tcard__body"><strong>Yaw Boateng</strong><small>Paid Media Lead</small></div>
       </article>
-      <article class="member media" data-label="team-4.jpg" data-initials="AM">
-        <img src="images/team-4.jpg" alt="Akosua Mensah" onerror="this.remove()" />
-        <span class="member__tag"><strong>Akosua Mensah</strong><small>Client Success Manager</small></span>
+      <article class="tcard card lift">
+        <div class="tcard__photo media" data-label="" data-initials="AM">
+          <img src="images/team-4.jpg" alt="Akosua Mensah" onerror="this.remove()" />
+        </div>
+        <div class="tcard__body"><strong>Akosua Mensah</strong><small>Client Success Manager</small></div>
       </article>
-      <article class="member media" data-label="team-5.jpg" data-initials="KA">
-        <img src="images/team-5.jpg" alt="Kofi Adjei" onerror="this.remove()" />
-        <span class="member__tag"><strong>Kofi Adjei</strong><small>Designer &amp; Editor</small></span>
+      <article class="tcard card lift">
+        <div class="tcard__photo media" data-label="" data-initials="KA">
+          <img src="images/team-5.jpg" alt="Kofi Adjei" onerror="this.remove()" />
+        </div>
+        <div class="tcard__body"><strong>Kofi Adjei</strong><small>Designer &amp; Editor</small></div>
       </article>
+      </div>
     </div>
   </section>
 
   <!-- ============ CTA ============ -->
   <section class="section">
-    <div class="cta-orange">
-      <h2>Let's grow your brand together.</h2>
-      <div class="cta-orange__side">
-        <p>Book a free 30-minute strategy call. We'll look at your business and tell you honestly where the quickest wins are.</p>
-        <div class="hero__actions">
-          <a href="contact.html" class="pill pill--dark pill--lg">Book a call <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="pricing.html" class="pill pill--on-orange pill--lg">See pricing</a>
+    <div class="wrap">
+      <div class="ctabox card">
+        <span class="eyebrow"><i></i>Free 30-minute call</span>
+        <h2>Let's grow your brand together.</h2>
+        <p>Book a free strategy call. We'll look at your business and tell you honestly where the quickest wins are.</p>
+        <div class="ihero__actions">
+          <a href="contact.html" class="pill pill--orange pill--lg">Book a call <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="pricing.html" class="pill pill--ghost pill--lg">See pricing</a>
         </div>
       </div>
     </div>
@@ -195,6 +232,6 @@
   </footer>
 
 </div>
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>

@@ -10,6 +10,20 @@ const setMenu = (open) => {
 };
 burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
 nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+document.addEventListener('click', (e) => {
+  if (nav.classList.contains('is-open') && !e.target.closest('#navbar')) setMenu(false);
+});
+
+// Floating navbar: shadow once scrolled; on home, flip from dark to light past the hero
+const navbar = document.getElementById('navbar');
+const heroEl = document.querySelector('.hero');
+const onScroll = () => {
+  navbar.classList.toggle('is-scrolled', window.scrollY > 24);
+  if (heroEl) navbar.classList.toggle('is-past-hero', window.scrollY > heroEl.offsetHeight - 80);
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
 // ---------- Dashboard mock — example data, edit freely ----------
 if (document.getElementById('bars')) {
@@ -329,7 +343,7 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 document
-  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .manifesto, .numbers, .vrow, .member, .cta-orange, .included, .form-dark, .next-steps, .office-card')
+  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .about-visual, .stats, .ourstory, .values, .team, .plans-grid, .ctable, .oneoff, .feats, .ctabox, .steps, .office, .shead, .form-card')
   .forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 3) * 70}ms`;
