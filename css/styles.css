@@ -2056,40 +2056,83 @@ a.c--media:hover > img { transform: scale(1.03); }
   .cta-card { grid-template-columns: 1fr; gap: 24px; padding-top: 56px; }
 }
 
-/* ---------- Inner — phones ---------- */
+/* ---------- Inner — phones ----------
+   Everything steps down about 10% from the clamp() minimums.
+   Form fields stay at 16px so iOS doesn't zoom in on focus. */
 @media (max-width: 600px) {
-  .inner { --r-card: 20px; --pad: 22px; --gap: 10px; }
+  .inner {
+    --r-card: 18px;
+    --pad: 20px;
+    --gap: 8px;
+    --fs-label: 11px;
+    --fs-sm: 13px;
+    --fs-body: 15px;
+    --fs-lead: 16px;
+    --fs-h4: 17px;
+    --fs-h3: 20px;
+    --fs-quote: 21px;
+    --fs-h2: 26px;
+    --fs-num: 34px;
+    --fs-display: 36px;
+  }
   .inner .wrap { padding: 0 12px; }
-  .inner .section { padding-top: 80px; }
-  .ihero { padding-top: 72px; }
-  .ihero__text { gap: 32px; }
+  .inner .section { padding-top: 64px; }
+  .ihero { padding-top: 64px; }
+  .ihero__text { gap: 28px; }
+  .ihero .lead { margin-bottom: 22px; }
+  .ihero--center .lead { margin: 14px auto 22px; }
+  .inner .pill--lg { height: 42px; padding: 0 20px; font-size: 14px; }
   .ihero .actions .pill,
   .cta-card .actions .pill { flex: 1 1 auto; }
-  .shead { margin-bottom: 20px; padding: 0 4px; }
+  .shead { margin-bottom: 16px; padding: 0 4px; }
   .shead > div { min-width: 0; }
-  .c--media { min-height: 380px; }
-  .cells > li { padding: 20px; }
-  .stats > li { min-height: 140px; gap: 24px; }
+  .shead p { margin-top: 8px; }
+  .rail-nav button { width: 38px; height: 38px; }
+  .rail-nav .i { width: 16px; height: 16px; }
+  .c--media { min-height: 320px; }
+  .cells > li { padding: 18px; }
+  .stats > li { min-height: 112px; gap: 20px; }
   .included { --cols: 1; }
   .included > li { min-height: 0; }
-  .team > li { flex-direction: column; gap: 2px; padding: 16px 20px; }
+  .team > li { flex-direction: column; gap: 2px; padding: 14px 18px; }
   .team span { text-align: left; }
-  .rail { grid-auto-columns: 72%; }
-  .project { aspect-ratio: 4 / 5; padding: 22px; }
+  .storyc { gap: 28px; }
+  .storyc__meta { gap: 10px; }
+  .rail { grid-auto-columns: 66%; }
+  .project { aspect-ratio: 4 / 5; padding: 18px; }
+  .plan-grid { margin-top: 36px; }
   .plan { --inset: 8px; }
-  .plan__body { padding: 20px 12px 12px; }
-  .terms { flex-direction: column; align-items: center; }
-  .spec-card { padding: 4px 16px 12px; }
-  .spec { min-width: 520px; font-size: var(--fs-sm); }
-  .spec th, .spec td { padding: 12px 12px 12px 0; }
-  .clist li > * { grid-template-columns: 76px 1fr auto; gap: 12px; padding: 14px 0; }
-  .fields { grid-template-columns: 1fr; gap: 16px; }
+  .plan__img { aspect-ratio: 16 / 9; }
+  .plan__body { padding: 18px 10px 10px; }
+  .plan__price { margin: 20px 0 18px; }
+  .plan .pill { height: 44px; }
+  .plan__plus { margin-top: 22px; }
+  .plan li { padding: 8px 0; }
+  .terms { flex-direction: column; align-items: center; margin-top: 18px; }
+  .spec-card { padding: 4px 14px 10px; }
+  .spec { min-width: 500px; }
+  .spec th, .spec td { padding: 11px 12px 11px 0; }
+  .contact-intro { gap: 28px; }
+  .contact-intro .lead { margin-top: 14px; }
+  .reply { margin-top: 12px; }
+  .clist li > * { grid-template-columns: 72px 1fr auto; gap: 12px; padding: 12px 0; }
+  .form > p { margin-bottom: 20px; }
+  .fields { grid-template-columns: 1fr; gap: 14px; }
+  .field { gap: 6px; }
+  .form input,
+  .form select,
+  .form textarea { padding: 12px 14px; border-radius: 12px; font-size: 16px; }
+  .form textarea { min-height: 120px; }
+  .form__foot { margin-top: 20px; }
   .form__foot .pill { width: 100%; }
-  .office { min-height: 360px; }
-  .cta-card { padding-top: 44px; }
-  .inner .faq summary { padding: 18px 0; }
-  .inner .faq summary::after { width: 28px; height: 28px; background-size: 12px; }
-  .inner .faq details p { padding: 0 0 18px; }
+  .step small { padding-top: 28px; }
+  .office { min-height: 300px; }
+  .office .actions { margin-top: 18px; }
+  .cta-card { gap: 20px; padding-top: 36px; }
+  .cta-card p { margin-bottom: 22px; }
+  .inner .faq summary { padding: 15px 0; }
+  .inner .faq summary::after { width: 26px; height: 26px; background-size: 11px; }
+  .inner .faq details p { padding: 0 0 15px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
