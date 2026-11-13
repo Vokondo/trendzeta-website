@@ -2146,3 +2146,117 @@ a.glass-row:hover { color: var(--orange); }
   .home .footer__grid > div > a,
   .home .footer__grid > div > span { font-size: 13px; padding: 3px 0; }
 }
+
+/* =========================================================
+   INNER PAGES — UI refresh
+   Scoped to body.inner so the home page is unaffected.
+   ========================================================= */
+
+/* Keyboard focus that's visible on both dark and light surfaces */
+.inner a:focus-visible,
+.inner button:focus-visible,
+.inner summary:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Header — no dead band above the headline, warm glow for depth */
+.inner .phead { isolation: isolate; }
+.inner .phead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 80% at 100% 0%, rgba(255, 90, 31, 0.22), transparent 60%),
+    radial-gradient(40% 60% at 0% 100%, rgba(255, 90, 31, 0.08), transparent 70%);
+}
+.inner .phead__body {
+  align-items: center;
+  min-height: min(58vh, 540px);
+  padding: 40px 40px 48px;
+}
+.inner .phead__copy { padding-bottom: 8px; }
+.inner .photo-stack { min-height: 440px; }
+
+/* About — team as a tidy grid, with an initials card until photos land */
+.member::after {
+  content: attr(data-initials);
+  place-items: center;
+  padding-bottom: 56px;
+  font-size: clamp(56px, 6vw, 88px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.9);
+}
+.member:not(:has(> img)) {
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 90, 31, 0.55), transparent 65%),
+    var(--ink-2);
+}
+.member:nth-child(even):not(:has(> img)) {
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 255, 255, 0.16), transparent 65%),
+    var(--ink-2);
+}
+@media (min-width: 961px) {
+  .inner .team-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 32px;
+    overflow: visible;
+  }
+  .inner .member { aspect-ratio: 3 / 4; transition: transform 0.35s ease; }
+  .inner .member:hover { transform: translateY(-6px); }
+  .inner .member__tag { left: 10px; right: 10px; bottom: 10px; padding: 10px 12px; border-radius: 14px; }
+  .inner .member__tag strong { font-size: 15px; }
+  .inner .member__tag small { font-size: 11.5px; }
+}
+
+/* Pricing — plans, compare table and add-ons share one width */
+@media (min-width: 961px) {
+  .inner .plans { max-width: 1240px; padding: 0 32px; }
+  .inner .tier { min-height: 700px; transition: transform 0.35s ease; }
+  .inner .tier:hover { transform: translateY(-6px); }
+  .inner .addons { max-width: 1176px; margin: 16px auto 0; }
+}
+.inner .plans__note { margin-top: 20px; font-size: 13px; }
+.inner .compare thead th { position: sticky; top: 0; background: var(--surface); }
+.inner .compare tbody tr:hover > * { background: #faf8f7; }
+.inner .compare tbody tr:hover > td:nth-child(3) { background: #fbefe8; }
+@media (max-width: 960px) {
+  .inner .compare table { min-width: 520px; }
+  .inner .compare tbody th { box-shadow: 1px 0 0 var(--line); z-index: 1; }
+}
+.inner .included li { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.inner .included li:hover { transform: translateY(-4px); box-shadow: var(--glass-light-shine), var(--shadow); }
+
+/* Contact — validation feedback once someone has interacted */
+.form-dark input:user-invalid,
+.form-dark select:user-invalid,
+.form-dark textarea:user-invalid {
+  border-color: #ff7a7a;
+  box-shadow: 0 0 0 4px rgba(255, 122, 122, 0.14);
+}
+.form-dark select:has(option[value=""]:checked) { color: rgba(255, 255, 255, 0.45); }
+.next-steps li { transition: transform 0.25s ease; }
+.next-steps li:hover { transform: translateX(4px); }
+
+/* Phones */
+@media (max-width: 600px) {
+  .inner .phead__body { min-height: 0; padding: 24px 14px 14px; }
+  .inner .photo-stack { min-height: 0; }
+  .member::after { font-size: 56px; padding-bottom: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner .member,
+  .inner .tier,
+  .inner .included li,
+  .next-steps li { transition: none; transform: none !important; }
+}
+.inner .plans__note a { color: var(--orange); }
