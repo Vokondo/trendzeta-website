@@ -345,12 +345,34 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 document
-  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .srow, .figures, .photo, .tiers, .band, .form, .contact-hero > div:first-child')
+  .querySelectorAll('.head, .tile, .extras, .carousel, .journey__tabs, .dash, .tier, .compare, .addons, .story, .faq, .cta__content, .footer__grid, .inner .grid, .inner .shead, .inner .rail, .inner .c--center, .office')
   .forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 3) * 70}ms`;
     revealObserver.observe(el);
   });
+
+// ---------- Card rails: prev / next buttons, hidden when everything fits ----------
+document.querySelectorAll('[data-rail]').forEach((rail) => {
+  const nav = document.querySelector(`[data-rail-nav="${rail.id}"]`);
+  if (!nav) return;
+  const [prev, next] = nav.querySelectorAll('button');
+  const update = () => {
+    const max = rail.scrollWidth - rail.clientWidth;
+    nav.hidden = max <= 2;
+    prev.disabled = rail.scrollLeft <= 2;
+    next.disabled = rail.scrollLeft >= max - 2;
+  };
+  nav.querySelectorAll('button').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap || 0);
+      rail.scrollBy({ left: Number(btn.dataset.dir) * step, behavior: reduceMotion ? 'auto' : 'smooth' });
+    })
+  );
+  rail.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});
 
 // ---------- Contact form -> opens a pre-filled email (swap for a form service later) ----------
 const contactForm = document.getElementById('contact-form');
