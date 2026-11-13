@@ -1529,7 +1529,7 @@ h2 {
   padding: 0 40px;
 }
 .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
-.logo img { display: block; width: auto; height: 24px; }
+.logo img { display: block; width: auto; height: 18px; }
 
 .nav { display: flex; gap: 32px; }
 .nav a {
@@ -1646,7 +1646,7 @@ h2 {
 }
 @media (max-width: 600px) {
   .navbar__cta { display: none; }
-  .logo img { height: 21px; }
+  .logo img { height: 16px; }
   .hero__bottom { padding-top: 88px; }
 }
 
