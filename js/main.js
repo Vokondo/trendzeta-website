@@ -24,13 +24,9 @@ document.addEventListener('click', (e) => {
 // Close it if the window grows past the mobile breakpoint
 window.matchMedia('(min-width: 961px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
-// Floating navbar: shadow once scrolled; on home, flip from dark to light past the hero
+// Nav bar: hairline under it once the page has scrolled
 const navbar = document.getElementById('navbar');
-const heroEl = document.querySelector('.hero');
-const onScroll = () => {
-  navbar.classList.toggle('is-scrolled', window.scrollY > 24);
-  if (heroEl) navbar.classList.toggle('is-past-hero', window.scrollY > heroEl.offsetHeight - 80);
-};
+const onScroll = () => navbar.classList.toggle('is-scrolled', window.scrollY > 4);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 

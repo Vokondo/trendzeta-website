@@ -1513,12 +1513,10 @@ h2 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  background: var(--page);   /* solid from the start */
+  transition: box-shadow 0.3s;
 }
-.navbar.is-scrolled::before {
-  background: var(--page);
-  box-shadow: 0 1px 0 var(--line);
-}
+.navbar.is-scrolled::before { box-shadow: 0 1px 0 var(--line); }
 .navbar__inner {
   display: flex;
   align-items: center;
@@ -1581,19 +1579,9 @@ h2 {
 .burger.is-open span:first-child { transform: translateY(3.75px) rotate(45deg); }
 .burger.is-open span:last-child { transform: translateY(-3.75px) rotate(-45deg); }
 
-/* Home: white type straight over the hero photo, until scrolled past it */
-.navbar--dark:not(.is-past-hero):not(.menu-open) { color: #fff; }
-.navbar--dark:not(.is-past-hero):not(.menu-open)::before {
-  background: linear-gradient(rgba(10, 10, 12, 0.35), transparent);
-  box-shadow: none;
-}
-.navbar--dark:not(.is-past-hero):not(.menu-open) .nav a,
-.navbar--dark:not(.is-past-hero):not(.menu-open) .navbar__mail { color: rgba(255, 255, 255, 0.72); }
-.navbar--dark:not(.is-past-hero):not(.menu-open) .nav a:hover,
-.navbar--dark:not(.is-past-hero):not(.menu-open) .nav a.is-active,
-.navbar--dark:not(.is-past-hero):not(.menu-open) .navbar__mail:hover { color: #fff; }
-
-.hero__bottom { padding-top: 112px; }
+/* Home hero starts below the solid bar */
+.home .hero { margin-top: 72px; min-height: calc(100vh - 72px); min-height: calc(100svh - 72px); }
+.hero__bottom { padding-top: 40px; }
 
 @media (max-width: 1100px) { .navbar__mail { display: none; } }
 
@@ -1642,12 +1630,13 @@ h2 {
   .nav__foot a { padding: 0; font-size: 15px; font-weight: 500; color: var(--ink); }
   .nav__foot a::before { display: none; }
   .nav__foot .nav__cta { height: 50px; margin-top: 20px; font-size: 16px; color: var(--ink); background: var(--orange); }
-  .hero__bottom { padding-top: 96px; }
+  .home .hero { margin-top: 64px; min-height: calc(100vh - 64px); min-height: calc(100svh - 64px); }
+  .hero__bottom { padding-top: 32px; }
 }
 @media (max-width: 600px) {
   .navbar__cta { display: none; }
   .logo img { height: 16px; }
-  .hero__bottom { padding-top: 88px; }
+  .hero__bottom { padding-top: 28px; }
 }
 
 /* =========================================================
@@ -1772,7 +1761,7 @@ h2 {
 .navbar button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 
 /* Nav on white pages */
-.inner .navbar.is-scrolled::before { background: #fff; }
+.inner .navbar::before { background: #fff; }
 .inner .navbar.menu-open::before { background: #fff; }
 @media (max-width: 960px) { .inner .nav { background: #fff; } }
 
