@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <meta name="theme-color" content="#ff5f05" />
-  <link rel="stylesheet" href="css/styles.css?v=49" />
+  <link rel="stylesheet" href="css/styles.css?v=50" />
 </head>
 <body class="inner">
   <header class="navbar" id="navbar">
@@ -39,13 +39,42 @@
   </header>
 <div class="page">
   <!-- ============ HERO + PLANS ============ -->
-  <header class="ihero ihero--center">
+  <header class="ihero">
+    <div class="wrap grid g-hero">
+      <div class="ihero__text c c--pad">
+        <h1>Simple plans. Honest numbers.</h1>
+        <div>
+          <p class="lead">Monthly retainers with no long lock-in, plus one-off projects when you just need one thing done well.</p>
+          <div class="actions">
+            <a href="#plans" class="pill pill--ink pill--lg">Compare plans</a>
+            <a href="contact.html" class="pill pill--line pill--lg">Talk to us</a>
+          </div>
+        </div>
+      </div>
+      <aside class="from c c--ink c--pad" aria-label="Pricing at a glance">
+        <p class="from__label">Retainers from</p>
+        <p class="from__price"><small>GH₵</small><span>3,500</span><small>/month</small></p>
+        <ul class="from__terms">
+          <li>Prices exclude VAT and ad spend</li>
+          <li>Monthly after the first 3 months</li>
+          <li>Switch plans at the start of any month</li>
+        </ul>
+        <a href="contact.html" class="from__go">Get a free audit <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </aside>
+    </div>
+  </header>
+
+  <section class="section plans-section" id="plans">
     <div class="wrap">
-      <h1>Simple plans. Honest numbers.</h1>
-      <p class="lead">Monthly retainers with no long lock-in, plus one-off projects when you just need one thing done well.</p>
-      <div class="billing" role="group" aria-label="Billing cycle">
-        <button class="is-active" data-cycle="monthly">Monthly</button>
-        <button data-cycle="quarterly">Quarterly <em>Save 10%</em></button>
+      <div class="shead">
+        <div>
+          <h2>Monthly plans</h2>
+          <p>Pay quarterly and save 10% on your retainer.</p>
+        </div>
+        <div class="billing" role="group" aria-label="Billing cycle">
+          <button class="is-active" data-cycle="monthly">Monthly</button>
+          <button data-cycle="quarterly">Quarterly <em>Save 10%</em></button>
+        </div>
       </div>
       <div class="plan-grid grid g-3">
         <article class="plan c">
@@ -97,9 +126,8 @@
           </div>
         </article>
       </div>
-      <p class="terms"><span>Prices exclude VAT and ad spend.</span><span>Monthly after the first 3 months.</span><span>Switch plans at the start of any month.</span></p>
     </div>
-  </header>
+  </section>
 
   <section class="section" id="compare">
     <div class="wrap">

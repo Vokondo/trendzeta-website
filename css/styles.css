@@ -2426,3 +2426,37 @@ a.c--media:hover > img { transform: scale(1.03); }
   .slide__result strong { font-size: clamp(40px, 3.9vw, 56px); }
 }
 
+/* Pricing hero: headline card + "Retainers from" summary card */
+.from { display: flex; flex-direction: column; min-height: 440px; }
+.from__label { font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.62); }
+.from__price { display: flex; align-items: baseline; gap: 8px; margin-top: 10px; color: #fff; }
+.from__price span { font-size: var(--fs-num); font-weight: 500; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.from__price small { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.62); }
+.from__terms { margin-top: auto; padding-top: 32px; }
+.from__terms li { padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.14); color: rgba(255, 255, 255, 0.86); }
+.from__go {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.from__go .i { width: 18px; height: 18px; transition: transform 0.2s; }
+.from__go:hover .i { transform: translateX(4px); }
+.plans-section .plan-grid { margin-top: 0; }
+.plans-section .shead { align-items: center; }
+@media (max-width: 960px) {
+  .from { min-height: 0; }
+  .plans-section .shead { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+@media (max-width: 600px) {
+  .from__price { margin-top: 6px; }
+  .from__terms { padding-top: 22px; }
+  .from__terms li { padding: 11px 0; font-size: 15px; }
+  .from__go { min-height: 44px; padding-top: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .from__go .i { transition: none; } }
+
