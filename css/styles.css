@@ -1850,7 +1850,7 @@ a.c--media:hover > img { transform: scale(1.03); }
 .team { --cols: 5; }
 .team > li { min-height: 140px; justify-content: flex-end; }
 .included p { margin-top: 8px; color: var(--soft); }
-.included > li { min-height: 200px; justify-content: flex-end; }
+.included > li { justify-content: flex-start; }
 
 /* Swipeable row of cards */
 .rail {
@@ -1925,7 +1925,7 @@ a.c--media:hover > img { transform: scale(1.03); }
 .plan-grid { margin-top: 56px; text-align: left; }
 .plan { --inset: 12px; display: flex; flex-direction: column; padding: var(--inset); }
 /* nested corners: inner radius = card radius - inset */
-.plan__img { aspect-ratio: 16 / 10; border-radius: calc(var(--r-card) - var(--inset)); }
+.plan__img { aspect-ratio: 2 / 1; border-radius: calc(var(--r-card) - var(--inset)); }
 .plan__body { display: flex; flex-direction: column; flex: 1; padding: 24px 16px 16px; }
 .plan__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .plan__tag { padding: 5px 10px; border-radius: 999px; background: var(--orange); color: var(--ink); letter-spacing: 0.06em; }
@@ -1942,7 +1942,8 @@ a.c--media:hover > img { transform: scale(1.03); }
 .plan.c--ink .plan__plus { color: rgba(255, 255, 255, 0.62); }
 .plan.c--ink .plan__price span { color: #fff; }
 .plan.c--ink li { color: rgba(255, 255, 255, 0.88); border-color: rgba(255, 255, 255, 0.12); }
-.terms { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 28px; margin-top: 24px; color: var(--muted); }
+.terms { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; margin-top: 24px; color: var(--muted); }
+.terms span + span::before { content: "·"; margin: 0 12px; color: #b4b4bb; }
 
 .spec-card { padding: 16px var(--pad) 24px; }
 .spec-wrap { overflow-x: auto; }
@@ -2103,16 +2104,22 @@ a.c--media:hover > img { transform: scale(1.03); }
   .project { aspect-ratio: 4 / 5; padding: 18px; }
   .plan-grid { margin-top: 36px; }
   .plan { --inset: 8px; }
-  .plan__img { aspect-ratio: 16 / 9; }
+  .plan__img { aspect-ratio: 5 / 2; }
   .plan__body { padding: 18px 10px 10px; }
   .plan__price { margin: 20px 0 18px; }
   .plan .pill { height: 44px; }
   .plan__plus { margin-top: 22px; }
   .plan li { padding: 8px 0; }
   .terms { flex-direction: column; align-items: center; margin-top: 18px; }
+  .terms span + span::before { content: none; }
   .spec-card { padding: 4px 14px 10px; }
-  .spec { min-width: 500px; }
-  .spec th, .spec td { padding: 11px 12px 11px 0; }
+  .spec { min-width: 0; table-layout: fixed; font-size: 13px; }
+  .spec tbody th { width: 31%; }
+  .spec th, .spec td { padding: 11px 8px 11px 0; vertical-align: top; overflow-wrap: anywhere; }
+  .spec thead th { font-size: 10px; letter-spacing: 0.06em; }
+  .spec tbody th,
+  .spec thead th:first-child { position: static; }
+  .spec .yes { width: 16px; height: 16px; }
   .contact-intro { gap: 28px; }
   .contact-intro .lead { margin-top: 14px; }
   .reply { margin-top: 12px; }
