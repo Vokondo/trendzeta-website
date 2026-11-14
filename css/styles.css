@@ -2356,10 +2356,3 @@ a.c--media:hover > img { transform: scale(1.03); }
   .scard__go .i { width: 16px; height: 16px; }
 }
 
-/* Orange card: ink text throughout (6.2:1 on the brand orange) */
-.c--orange { background: var(--orange); color: var(--ink); }
-.c--orange h1,
-.c--orange .lead { color: var(--ink); }
-.c--orange .pill--line { border-color: rgba(14, 14, 16, 0.45); }
-.c--orange .pill--line:hover { border-color: var(--ink); background: rgba(14, 14, 16, 0.06); }
-
