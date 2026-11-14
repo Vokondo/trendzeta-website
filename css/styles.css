@@ -2426,3 +2426,18 @@ a.c--media:hover > img { transform: scale(1.03); }
   .slide__result strong { font-size: clamp(40px, 3.9vw, 56px); }
 }
 
+/* Weights: large type regular (400) for a lighter, refined feel;
+   card titles, small headings, labels and buttons stay 500. */
+.hero h1,
+.ihero h1,
+.cta-card h2,
+.cta__content h2,
+.h2-xl,
+.shead h2,
+.office h2,
+.stats strong,
+.plan__price span,
+.tier__price span,
+.slide__result strong,
+.scard__big { font-weight: 400; }
+
