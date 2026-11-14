@@ -2460,3 +2460,9 @@ a.c--media:hover > img { transform: scale(1.03); }
 }
 @media (prefers-reduced-motion: reduce) { .from__go .i { transition: none; } }
 
+/* Beginner pack card */
+.from__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.from__label { color: #fff; font-size: var(--fs-h4); }
+.from__for { margin-top: 10px; color: rgba(255, 255, 255, 0.72); }
+.from__terms li { line-height: 1.45; }
+
