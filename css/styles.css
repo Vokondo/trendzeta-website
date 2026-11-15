@@ -2509,3 +2509,10 @@ a.c--media:hover > img { transform: scale(1.03); }
   .ceo__avatar { width: 42px; height: 42px; font-size: 14px; }
 }
 
+/* CEO card in brand orange: ink text throughout (6.2:1) */
+.ceo--orange { background: var(--orange); }
+.ceo--orange .ceo__quote p,
+.ceo--orange .ceo__by strong,
+.ceo--orange .ceo__by small { color: var(--ink); }
+.ceo--orange .ceo__by { border-top-color: rgba(14, 14, 16, 0.25); }
+
