@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "trendzeta-website.vercel.app" }],
+      "destination": "https://trendzeta.com/:path*",
+      "permanent": true
+    }
+  ]
+}
