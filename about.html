@@ -3,8 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About us — Trendzeta</title>
-  <meta name="description" content="Meet Trendzeta, a digital marketing agency in Accra helping Ghanaian brands grow with strategy, content and campaigns." />
+  <title>About Trendzeta | Digital Marketing Agency in Accra</title>
+  <meta name="description" content="Meet Trendzeta, a senior digital marketing team in Accra helping Ghanaian brands grow with strategy, content and paid campaigns. Read our story and values." />
+  <link rel="canonical" href="https://trendzeta-website.vercel.app/about.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Trendzeta" />
+  <meta property="og:locale" content="en_GH" />
+  <meta property="og:url" content="https://trendzeta-website.vercel.app/about.html" />
+  <meta property="og:title" content="About Trendzeta | Digital Marketing Agency in Accra" />
+  <meta property="og:description" content="Meet Trendzeta, a senior digital marketing team in Accra helping Ghanaian brands grow with strategy, content and paid campaigns. Read our story and values." />
+  <meta property="og:image" content="https://trendzeta-website.vercel.app/images/og-image.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Trendzeta, digital marketing agency in Accra" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Trendzeta | Digital Marketing Agency in Accra" />
+  <meta name="twitter:description" content="Meet Trendzeta, a senior digital marketing team in Accra helping Ghanaian brands grow with strategy, content and paid campaigns. Read our story and values." />
+  <meta name="twitter:image" content="https://trendzeta-website.vercel.app/images/og-image.webp" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "url": "https://trendzeta-website.vercel.app/about.html",
+      "name": "About Trendzeta | Digital Marketing Agency in Accra",
+      "about": {
+        "@id": "https://trendzeta-website.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Emmanuel Osei Degraft",
+      "jobTitle": "CEO",
+      "worksFor": {
+        "@id": "https://trendzeta-website.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trendzeta-website.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://trendzeta-website.vercel.app/about.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -17,7 +73,7 @@
 <body class="inner">
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
-      <a href="index.html" class="logo" aria-label="Trendzeta home"><img src="images/logo.png" alt="" width="116" height="18" /></a>
+      <a href="index.html" class="logo" aria-label="Trendzeta home"><img src="images/logo.png" alt="Trendzeta" width="116" height="18" /></a>
       <nav class="nav" id="nav" aria-label="Main">
         <a href="about.html" class="is-current" aria-current="page">About</a>
         <a href="pricing.html">Pricing</a>
@@ -52,7 +108,7 @@
         </div>
       </div>
       <div class="c c--photo">
-        <img src="images/plan-growth.jpg" alt="Two of the team reviewing a campaign moodboard" onerror="this.remove()" />
+        <img fetchpriority="high" src="images/plan-growth.webp" alt="Two of the team reviewing a campaign moodboard" onerror="this.remove()" />
       </div>
     </div>
   </header>
@@ -84,7 +140,7 @@
           </div>
         </div>
         <div class="c c--photo">
-          <img src="images/service-content-v2.jpg" alt="A product shoot in the studio" onerror="this.remove()" />
+          <img loading="lazy" decoding="async" src="images/service-content-v2.webp" alt="A product shoot in the studio" onerror="this.remove()" />
         </div>
       </div>
     </div>
@@ -203,6 +259,6 @@
   </footer>
 
 </div>
-<script src="js/main.js?v=14"></script>
+<script src="js/main.js?v=15"></script>
 </body>
 </html>

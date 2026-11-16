@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trendzeta-website.vercel.app/sitemap.xml
