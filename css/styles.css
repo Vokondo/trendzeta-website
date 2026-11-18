@@ -2516,3 +2516,20 @@ a.c--media:hover > img { transform: scale(1.03); }
 .ceo--orange .ceo__by small { color: var(--ink); }
 .ceo--orange .ceo__by { border-top-color: rgba(14, 14, 16, 0.25); }
 
+/* Home FAQ: answers in a white card, matching the client-story card */
+.faq-home { max-width: 924px; }
+.faq--card {
+  max-width: none;
+  padding: 6px 36px;
+  border-radius: var(--r-lg);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 15, 20, 0.04);
+}
+.faq--card details:first-of-type { border-top: 0; }
+.faq--card details:last-of-type { border-bottom: 0; }
+.faq--card summary::after { background-color: #f1f1f3; }
+.faq--card details[open] summary::after { background-color: var(--ink); }
+@media (max-width: 600px) {
+  .faq--card { padding: 2px 18px; border-radius: 18px; }
+}
+
