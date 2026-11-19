@@ -1960,8 +1960,8 @@ a.c--media:hover > img { transform: scale(1.03); }
 
 .project { aspect-ratio: 3 / 4; min-height: 0; padding: 28px; }
 .project h3 { max-width: 12ch; }
-.project p { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
-.project p .i { width: 16px; height: 16px; transition: transform 0.25s; }
+.project__cta { align-self: flex-start; height: 40px; margin-top: 16px; padding: 0 18px; }
+.project:hover .project__cta { background: #e9e9ec; }
 .project:hover p .i { transform: translateX(3px); }
 
 /* ---------- Contact ---------- */
@@ -2143,7 +2143,7 @@ a.c--media:hover > img { transform: scale(1.03); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .navbar, .navbar::before, .nav, .nav a::before, .c--media > img, .project p .i, .clist .i { transition: none; }
+  .navbar, .navbar::before, .nav, .nav a::before, .c--media > img, .clist .i { transition: none; }
   a.c--media:hover > img { transform: none; }
 }
 
