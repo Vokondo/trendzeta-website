@@ -2586,3 +2586,49 @@ a.c--media:hover > img { transform: scale(1.03); }
 }
 @media (prefers-reduced-motion: reduce) { .project__img img { transition: none; } .project:hover .project__img img { transform: none; } }
 
+/* Home pricing: same plan cards as the Pricing page, white on the grey page */
+.home .plans--cards {
+  --card: #fff;
+  --rule: #e4e4e8;
+  --soft: #4d4d55;
+  --muted: #66666f;
+  --r-card: 28px;
+  --fs-sm: 14px;
+  --fs-h3: clamp(22px, 2vw, 28px);
+  --fs-num: clamp(40px, 3.9vw, 56px);
+  max-width: 1360px;
+  padding: 0 32px;
+  align-items: stretch;
+}
+.home .plans--cards .plan { color: var(--ink); }
+.home .plans--cards .plan.c--ink { color: #fff; }
+@media (max-width: 960px) {
+  .home .plans--cards { padding: 4px 20px 8px; }
+  .home .plans--cards > .plan { flex: 0 0 72%; scroll-snap-align: center; }
+  .home .plans--cards > .plan--growth { order: -1; }
+}
+@media (max-width: 600px) {
+  .home .plans--cards { --r-card: 20px; --fs-sm: 13px; --fs-h3: 20px; --fs-num: 34px; padding: 4px 10px 8px; font-size: 15px; }
+  .home .plans--cards .plan__for,
+  .home .plans--cards .plan li { font-size: 15px; }
+  .home .plans--cards > .plan { flex-basis: 84%; }
+}
+
+/* Home case-study controls: plain dots like the Pricing carousel */
+.home .carousel__dots {
+  padding: 0 6px;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.home .carousel__play {
+  background: #e9e9ec;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.home .carousel__play:hover { background: #dedee2; }
+

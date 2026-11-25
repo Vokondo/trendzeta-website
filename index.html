@@ -124,7 +124,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <meta name="theme-color" content="#ff5f05" />
-  <link rel="stylesheet" href="css/styles.css?v=59" />
+  <link rel="stylesheet" href="css/styles.css?v=60" />
 </head>
 <body class="home">
   <header class="navbar" id="navbar">
@@ -390,43 +390,55 @@
       </div>
     </div>
 
-    <div class="plans">
-      <article class="tier tier--starter media" data-label="plan-starter.jpg">
-        <img loading="lazy" decoding="async" src="images/plan-starter.webp" alt="" onerror="this.remove()" />
-        
-        <div class="tier__body">
-          <p class="tier__for">Show up consistently online.</p>
-          <h3>Starter</h3>
-          <p class="tier__price"><small>GH₵</small><span data-price="3500">3,500</span><small>/month</small></p>
-          <p class="tier__plus">What's included</p>
-          <ul><li>2 social platforms</li><li>12 designed posts a month</li><li>Community management</li><li>Monthly performance report</li></ul>
-          <a href="#audit" class="pill pill--light">Choose Starter</a>
-        </div>
-      </article>
-      <article class="tier tier--growth media" data-label="plan-growth.jpg">
-        <img loading="lazy" decoding="async" src="images/plan-growth.webp" alt="" onerror="this.remove()" />
-        <span class="chip chip--orange">Most popular</span>
-        <div class="tier__body">
-          <p class="tier__for">Turn attention into sales.</p>
-          <h3>Growth</h3>
-          <p class="tier__price"><small>GH₵</small><span data-price="8500">8,500</span><small>/month</small></p>
-          <p class="tier__plus">Everything in Starter, plus</p>
-          <ul><li>3 platforms + 4 short videos</li><li>Meta &amp; Google ad management</li><li>Quarterly content shoot</li><li>Live dashboard &amp; monthly call</li></ul>
-          <a href="#audit" class="pill pill--brand">Choose Growth</a>
-        </div>
-      </article>
-      <article class="tier tier--scale media" data-label="plan-scale.jpg">
-        <img loading="lazy" decoding="async" src="images/plan-scale.webp" alt="" onerror="this.remove()" />
-        
-        <div class="tier__body">
-          <p class="tier__for">A full marketing team on call.</p>
-          <h3>Scale</h3>
-          <p class="tier__price"><span>Let's talk</span></p>
-          <p class="tier__plus">Everything in Growth, plus</p>
-          <ul><li>Unlimited channels &amp; monthly shoots</li><li>Influencer campaigns</li><li>SEO &amp; landing pages</li><li>Dedicated team, weekly check-ins</li></ul>
-          <a href="#audit" class="pill pill--dark">Book a call</a>
-        </div>
-      </article>
+    <div class="plans plans--cards">
+        <article class="plan c">
+          <div class="plan__img media" data-label="plan-starter.jpg"><img loading="lazy" decoding="async" src="images/plan-starter.webp" alt="" onerror="this.remove()" /></div>
+          <div class="plan__body">
+            <div class="plan__head"><h3 class="plan__name">Starter</h3></div>
+            <p class="plan__for">Show up consistently online.</p>
+            <p class="plan__price"><small>GH₵</small><span data-price="3500">3,500</span><small>/month</small></p>
+            <a href="#audit" class="pill pill--ink">Choose Starter</a>
+            <p class="plan__plus">What's included</p>
+            <ul>
+              <li>2 social platforms</li>
+              <li>12 designed posts a month</li>
+              <li>Community management</li>
+              <li>Monthly performance report</li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--growth c c--ink">
+          <div class="plan__img media" data-label="plan-growth.jpg"><img loading="lazy" decoding="async" src="images/plan-growth.webp" alt="" onerror="this.remove()" /></div>
+          <div class="plan__body">
+            <div class="plan__head"><h3 class="plan__name">Growth</h3><span class="plan__tag">Most popular</span></div>
+            <p class="plan__for">Turn attention into sales.</p>
+            <p class="plan__price"><small>GH₵</small><span data-price="8500">8,500</span><small>/month</small></p>
+            <a href="#audit" class="pill pill--brand">Choose Growth</a>
+            <p class="plan__plus">Everything in Starter, plus</p>
+            <ul>
+              <li>3 platforms + 4 short videos</li>
+              <li>Meta &amp; Google ad management</li>
+              <li>Quarterly content shoot</li>
+              <li>Live dashboard &amp; monthly call</li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan c">
+          <div class="plan__img media" data-label="plan-scale.jpg"><img loading="lazy" decoding="async" src="images/plan-scale.webp" alt="" onerror="this.remove()" /></div>
+          <div class="plan__body">
+            <div class="plan__head"><h3 class="plan__name">Scale</h3></div>
+            <p class="plan__for">A full marketing team on call.</p>
+            <p class="plan__price"><span>Let's talk</span></p>
+            <a href="#audit" class="pill pill--ink">Book a call</a>
+            <p class="plan__plus">Everything in Growth, plus</p>
+            <ul>
+              <li>Unlimited channels &amp; monthly shoots</li>
+              <li>Influencer campaigns</li>
+              <li>SEO &amp; landing pages</li>
+              <li>Dedicated team, weekly check-ins</li>
+            </ul>
+          </div>
+        </article>
     </div>
 
     <p class="plans__note">All prices exclude VAT and ad spend. <a href="pricing.html">Compare plans and one-off projects</a></p>
@@ -560,6 +572,6 @@
   </footer>
 
 </div>
-<script src="js/main.js?v=16"></script>
+<script src="js/main.js?v=17"></script>
 </body>
 </html>

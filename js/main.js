@@ -163,7 +163,7 @@ if (plansRow) {
   let plansTouched = false;
   const centrePlans = () => {
     if (plansTouched || plansRow.scrollWidth <= plansRow.clientWidth + 2) return;
-    const cards = [...plansRow.querySelectorAll('.tier')].sort((a, b) => a.offsetLeft - b.offsetLeft);
+    const cards = [...plansRow.querySelectorAll('.tier, .plan')].sort((a, b) => a.offsetLeft - b.offsetLeft);
     const mid = cards[Math.floor(cards.length / 2)];
     plansRow.scrollLeft = mid.offsetLeft - (plansRow.clientWidth - mid.offsetWidth) / 2;
   };
