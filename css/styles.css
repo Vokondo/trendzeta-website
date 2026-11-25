@@ -2536,3 +2536,45 @@ a.c--media:hover > img { transform: scale(1.03); }
   .faq--card { padding: 2px 18px; border-radius: 18px; }
 }
 
+/* One-off projects as a carousel: bigger cards with the next one
+   peeking in, dots underneath. */
+.rail--carousel { grid-auto-columns: calc((100% - 2 * var(--gap)) / 2.35); scroll-behavior: smooth; }
+.rail--carousel > .project { aspect-ratio: 4 / 3; }
+.rail-dots { display: flex; justify-content: center; margin-top: 20px; }
+.rail-dots[hidden] { display: none; }
+.rail-dots button {
+  position: relative;
+  width: 22px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transition: width 0.3s ease;
+}
+.rail-dots button::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 7px;
+  right: 7px;
+  height: 8px;
+  border-radius: 999px;
+  background: #c9c9cf;
+  transition: background 0.3s;
+}
+.rail-dots button:hover::before { background: #9a9aa2; }
+.rail-dots button[aria-current] { width: 40px; }
+.rail-dots button[aria-current]::before { background: var(--ink); }
+@media (max-width: 960px) {
+  .rail--carousel { grid-auto-columns: 64%; }
+}
+@media (max-width: 600px) {
+  .rail--carousel { grid-auto-columns: 84%; }
+  .rail--carousel > .project { aspect-ratio: 4 / 5; }
+  .rail-dots { margin-top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rail--carousel { scroll-behavior: auto; }
+  .rail-dots button, .rail-dots button::before { transition: none; }
+}
+

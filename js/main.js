@@ -374,23 +374,83 @@ document
   });
 
 // ---------- Card rails: prev / next buttons, hidden when everything fits ----------
+// data-carousel rails also loop, show dots and advance on their own.
 document.querySelectorAll('[data-rail]').forEach((rail) => {
   const nav = document.querySelector(`[data-rail-nav="${rail.id}"]`);
-  if (!nav) return;
-  const [prev, next] = nav.querySelectorAll('button');
-  const update = () => {
-    const max = rail.scrollWidth - rail.clientWidth;
-    nav.hidden = max <= 2;
-    prev.disabled = rail.scrollLeft <= 2;
-    next.disabled = rail.scrollLeft >= max - 2;
+  const dotsEl = document.querySelector(`[data-rail-dots="${rail.id}"]`);
+  const isCarousel = rail.hasAttribute('data-carousel');
+  const cards = [...rail.children];
+  const behavior = reduceMotion ? 'auto' : 'smooth';
+  const step = () => cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap || 0);
+  const max = () => rail.scrollWidth - rail.clientWidth;
+  const current = () => (rail.scrollLeft >= max() - 2 ? cards.length - 1 : Math.round(rail.scrollLeft / step()));
+  const goTo = (i) => {
+    const n = cards.length;
+    const k = ((i % n) + n) % n;
+    rail.scrollTo({ left: Math.min(k * step(), max()), behavior });
   };
-  nav.querySelectorAll('button').forEach((btn) =>
-    btn.addEventListener('click', () => {
-      const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap || 0);
-      rail.scrollBy({ left: Number(btn.dataset.dir) * step, behavior: reduceMotion ? 'auto' : 'smooth' });
-    })
-  );
-  rail.addEventListener('scroll', update, { passive: true });
+
+  let dots = [];
+  if (dotsEl) {
+    dotsEl.innerHTML = cards
+      .map((c, i) => `<button type="button" aria-label="Show ${(c.querySelector('h3')?.textContent || 'item ' + (i + 1)).replace(/"/g, '')}"></button>`)
+      .join('');
+    dots = [...dotsEl.children];
+    dots.forEach((d, i) => d.addEventListener('click', () => { stopAuto(); goTo(i); }));
+  }
+
+  const update = () => {
+    const m = max();
+    if (nav) {
+      nav.hidden = m <= 2;
+      const [prev, next] = nav.querySelectorAll('button');
+      prev.disabled = !isCarousel && rail.scrollLeft <= 2;
+      next.disabled = !isCarousel && rail.scrollLeft >= m - 2;
+    }
+    if (dotsEl) {
+      dotsEl.hidden = m <= 2;
+      const c = current();
+      dots.forEach((d, i) => d.toggleAttribute('aria-current', i === c));
+    }
+  };
+
+  if (nav) {
+    nav.querySelectorAll('button').forEach((btn) =>
+      btn.addEventListener('click', () => {
+        stopAuto();
+        if (isCarousel) goTo(current() + Number(btn.dataset.dir));
+        else rail.scrollBy({ left: Number(btn.dataset.dir) * step(), behavior });
+      })
+    );
+  }
+
+  // Auto-advance: carousels only, paused on hover/focus or off-screen,
+  // stopped for good once the visitor takes control, never with reduced motion.
+  let timer;
+  let auto = isCarousel && !reduceMotion;
+  let hovering = false;
+  let onScreen = false;
+  const schedule = () => {
+    clearTimeout(timer);
+    if (auto && !hovering && onScreen && !document.hidden) timer = setTimeout(() => goTo(current() + 1), 5000);
+  };
+  function stopAuto() { auto = false; clearTimeout(timer); }
+  if (isCarousel) {
+    const zone = rail.closest('.wrap') || rail;
+    zone.addEventListener('pointerenter', () => { hovering = true; schedule(); });
+    zone.addEventListener('pointerleave', () => { hovering = false; schedule(); });
+    zone.addEventListener('focusin', () => { hovering = true; schedule(); });
+    zone.addEventListener('focusout', () => { hovering = false; schedule(); });
+    ['pointerdown', 'wheel'].forEach((ev) => rail.addEventListener(ev, stopAuto, { passive: true }));
+    document.addEventListener('visibilitychange', schedule);
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; schedule(); }, { threshold: 0.5 }).observe(rail);
+  }
+
+  let raf;
+  rail.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => { update(); schedule(); });
+  }, { passive: true });
   window.addEventListener('resize', update);
   update();
 });

@@ -174,7 +174,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <meta name="theme-color" content="#ff5f05" />
-  <link rel="stylesheet" href="css/styles.css?v=56" />
+  <link rel="stylesheet" href="css/styles.css?v=57" />
 </head>
 <body class="inner">
   <header class="navbar" id="navbar">
@@ -340,7 +340,7 @@
           <button type="button" data-dir="1" aria-label="Next" aria-controls="project-rail"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
-      <div class="rail" id="project-rail" data-rail>
+      <div class="rail rail--carousel" id="project-rail" data-rail data-carousel aria-roledescription="carousel" aria-label="One-off projects">
         <a href="contact.html" class="project c c--media">
           <img loading="lazy" decoding="async" src="images/service-content.webp" alt="" onerror="this.remove()" />
           <h3>Brand photo &amp; video shoot</h3>
@@ -362,6 +362,7 @@
           <span class="pill pill--light project__cta">Get a quote</span>
         </a>
       </div>
+      <div class="rail-dots" data-rail-dots="project-rail"></div>
     </div>
   </section>
 
@@ -477,6 +478,6 @@
   </footer>
 
 </div>
-<script src="js/main.js?v=15"></script>
+<script src="js/main.js?v=16"></script>
 </body>
 </html>
