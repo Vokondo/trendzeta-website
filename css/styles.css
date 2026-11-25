@@ -1958,14 +1958,8 @@ a.c--media:hover > img { transform: scale(1.03); }
 .spec .yes { width: 18px; height: 18px; color: var(--ink); stroke-width: 2.5; vertical-align: middle; }
 .spec .no { color: #a9a9b0; }
 
-.project { aspect-ratio: 3 / 4; min-height: 0; padding: 28px; }
 /* Fit the rail column exactly: the general photo-card min-height must not
    win here, or aspect-ratio widens the card and it slides under the next. */
-.rail > .c--media.project { width: 100%; min-width: 0; min-height: 0; }
-.project h3 { max-width: 12ch; }
-.project__cta { align-self: flex-start; height: 40px; margin-top: 16px; padding: 0 18px; }
-.project:hover .project__cta { background: #e9e9ec; }
-.project:hover p .i { transform: translateX(3px); }
 
 /* ---------- Contact ---------- */
 .contact-intro { display: flex; flex-direction: column; gap: 40px; }
@@ -2104,7 +2098,6 @@ a.c--media:hover > img { transform: scale(1.03); }
   .storyc { gap: 28px; }
   .storyc__meta { gap: 10px; }
   .rail { grid-auto-columns: 66%; }
-  .project { aspect-ratio: 4 / 5; padding: 18px; }
   .plan-grid { margin-top: 36px; }
   .plan { --inset: 8px; }
   .plan__img { aspect-ratio: 5 / 2; }
@@ -2539,7 +2532,6 @@ a.c--media:hover > img { transform: scale(1.03); }
 /* One-off projects as a carousel: bigger cards with the next one
    peeking in, dots underneath. */
 .rail--carousel { grid-auto-columns: calc((100% - 2 * var(--gap)) / 2.35); scroll-behavior: smooth; }
-.rail--carousel > .project { aspect-ratio: 4 / 3; }
 .rail-dots { display: flex; justify-content: center; margin-top: 20px; }
 .rail-dots[hidden] { display: none; }
 .rail-dots button {
@@ -2570,11 +2562,27 @@ a.c--media:hover > img { transform: scale(1.03); }
 }
 @media (max-width: 600px) {
   .rail--carousel { grid-auto-columns: 84%; }
-  .rail--carousel > .project { aspect-ratio: 4 / 5; }
   .rail-dots { margin-top: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rail--carousel { scroll-behavior: auto; }
   .rail-dots button, .rail-dots button::before { transition: none; }
 }
+
+/* One-off projects: clean photo, plain title underneath */
+.shead__side { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.project { display: block; min-width: 0; color: var(--ink); }
+.project__img { display: block; aspect-ratio: 4 / 3; }
+.project__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.project:hover .project__img img { transform: scale(1.03); }
+.c.project__img { border-radius: var(--r-card); }
+.project h3 { margin-top: 14px; padding: 0 4px; font-size: var(--fs-h4); font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
+@media (max-width: 600px) {
+  .project__img { aspect-ratio: 4 / 3; }
+  .project h3 { margin-top: 10px; }
+  .shead:has(.shead__side) { flex-direction: column; align-items: stretch; gap: 14px; }
+  .shead__side { justify-content: space-between; }
+  .shead__side .pill { height: 40px; padding: 0 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .project__img img { transition: none; } .project:hover .project__img img { transform: none; } }
 
