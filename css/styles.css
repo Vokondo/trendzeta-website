@@ -1959,6 +1959,9 @@ a.c--media:hover > img { transform: scale(1.03); }
 .spec .no { color: #a9a9b0; }
 
 .project { aspect-ratio: 3 / 4; min-height: 0; padding: 28px; }
+/* Fit the rail column exactly: the general photo-card min-height must not
+   win here, or aspect-ratio widens the card and it slides under the next. */
+.rail > .c--media.project { width: 100%; min-width: 0; min-height: 0; }
 .project h3 { max-width: 12ch; }
 .project__cta { align-self: flex-start; height: 40px; margin-top: 16px; padding: 0 18px; }
 .project:hover .project__cta { background: #e9e9ec; }
